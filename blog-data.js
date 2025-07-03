@@ -18,7 +18,7 @@ const blogPosts = [
     date: "2025-07-01",
     author: "Aanjelo Salgado",
     image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop",
+      "blog/img/the-story-of-kaasi.jpg",
     image_alt: "A piggy bank with coins.",
     url: "blog/the-story-of-kaasi.html",
     excerpt:
