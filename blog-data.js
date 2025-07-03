@@ -26,14 +26,14 @@ const blogPosts = [
   },
   {
     id: "budgeting-tips-sri-lanka",
-    title: "5 Simple Budgeting Tips for Young Professionals in Sri Lanka",
+    title: "5 Reasons why Liam should leave Loops",
     date: "2025-06-28",
     author: "Aanjelo Salgado",
     image:
-      "https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?q=80&w=1932&auto=format&fit=crop",
-    image_alt: "A person planning their budget with a calculator and notebook.",
-    url: "blog-post.html",
+      "blog/img/liam.jpg",
+    image_alt: "Liam",
+    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     excerpt:
-      "Starting your career is exciting, but managing your first salary can be tricky. Here are five practical tips to get you started on the right foot.",
+      "Tung tung tung tung tung tung tung tung tung sahoor!",
   },
 ];
