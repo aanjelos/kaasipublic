@@ -13,6 +13,18 @@
 
 const blogPosts = [
     {
+    id: "kaasi-v3-changelog",
+    title: "Kaasi v3 is Here: A New Home, New Features, and More!",
+    date: "2025-07-07",
+    author: "Aanjelo Salgado",
+    image:
+      "blog/img/the-story-of-kaasi.jpg",
+    image_alt: "A piggy bank with coins.",
+    url: "blog/kaasi-v3-changelog.html",
+    excerpt:
+      "Announcing the Kaasi v3 update! Discover our new home at kaasi.com.lk, a brand new website, and exciting new app features.",
+  },
+  {
     id: "the-story-of-kaasi",
     title: "From a Spreadsheet to an App: The Story Behind Kaasi",
     date: "2025-07-01",
@@ -23,17 +35,5 @@ const blogPosts = [
     url: "blog/the-story-of-kaasi.html",
     excerpt:
       "Discover the origin story of Kaasi, a personal finance app built for Sri Lankans out of a personal need for something better.",
-  },
-  {
-    id: "budgeting-tips-sri-lanka",
-    title: "5 Reasons why Liam should leave Loops",
-    date: "2025-06-28",
-    author: "Aanjelo Salgado",
-    image:
-      "blog/img/liam.jpg",
-    image_alt: "Liam",
-    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    excerpt:
-      "Tung tung tung tung tung tung tung tung tung sahoor!",
   },
 ];

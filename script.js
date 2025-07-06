@@ -293,6 +293,33 @@ document.addEventListener("DOMContentLoaded", () => {
     updateProgressBar(); // Run on page load to set initial state
   };
 
+  /**
+   * Handles the functionality for the privacy policy modal.
+   */
+  const setupPrivacyModal = () => {
+    const modal = document.getElementById("privacy-policy-modal");
+    const openButton = document.getElementById("open-privacy-policy");
+    const closeButton = document.getElementById("close-privacy-modal-button");
+
+    // Only run if the modal elements exist on the page (i.e., on index.html)
+    if (!modal || !openButton || !closeButton) {
+      return;
+    }
+
+    const openModal = () => modal.classList.remove("hidden");
+    const closeModal = () => modal.classList.add("hidden");
+
+    openButton.addEventListener("click", openModal);
+    closeButton.addEventListener("click", closeModal);
+
+    // Close modal if user clicks on the background overlay
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  };
+
   // --- BLOG POPULATION LOGIC ---
   const runBlogLogic = () => {
     // First, check if the blog data is available.
@@ -361,6 +388,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupScrollAnimationFallback();
   initFlowFieldBackground();
   setupDonateModal();
+  setupPrivacyModal();
   setupGoToTopButton();
   setupReadingProgressBar();
   runBlogLogic();

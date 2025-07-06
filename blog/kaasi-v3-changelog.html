@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kaasi v3 is Here: A New Home, New Features, and More!</title>
+
+    <meta
+      name="description"
+      content="Announcing the Kaasi v3 update! Discover our new home at kaasi.com.lk, a brand new website, new app features like daily expense graphs, and ways to support the project."
+    />
+    <meta
+      name="keywords"
+      content="kaasi update, changelog, v3, new features, expense tracker sri lanka, personal finance app, kaasi.com.lk, daily expense graph"
+    />
+    <meta name="author" content="Aanjelo Salgado" />
+
+    <meta
+      property="og:title"
+      content="Kaasi v3 is Here: A New Home, New Features, and More!"
+    />
+    <meta
+      property="og:description"
+      content="Announcing the Kaasi v3 update! Discover our new home at kaasi.com.lk, a brand new website, and exciting new app features."
+    />
+    <meta
+      property="og:image"
+      content="https://kaasi.com.lk/blog/img/kaasi-v3-changelog.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://kaasi.com.lk/blog/kaasi-v3-changelog.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2025-07-07T10:00:00Z" />
+    <meta property="article:author" content="Aanjelo Salgado" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Kaasi v3 is Here: A New Home, New Features, and More!"
+    />
+    <meta
+      name="twitter:description"
+      content="Announcing the Kaasi v3 update! Discover our new home at kaasi.com.lk, a brand new website, and exciting new app features."
+    />
+    <meta
+      name="twitter:image"
+      content="https://kaasi.com.lk/blog/img/kaasi-v3-changelog.jpg"
+    />
+
+    <link rel="icon" href="../img/LogoIcon.svg" type="image/svg+xml" />
+
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style.css" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2FSRSWZB28"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-2FSRSWZB28");
+    </script>
+  </head>
+
+  <body class="bg-[#121212] text-gray-300 font-satoshi antialiased">
+    <canvas
+      id="bg-canvas"
+      class="fixed top-0 left-0 w-full h-full z-0"
+    ></canvas>
+    <div class="aurora-overlay"></div>
+
+    <header
+      id="header"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    >
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="../index.html" class="flex items-center gap-2">
+          <img
+            src="../img/FullLogo.svg"
+            alt="Kaasi Logo"
+            class="h-8"
+            onerror="this.onerror=null; this.src='https://placehold.co/100x32/1a1a1a/e67e26?text=Kaasi&font=satoshi';"
+          />
+        </a>
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="../index.html#features" class="nav-link">Features</a>
+          <a href="../index.html#whats-next" class="nav-link">What's Next</a>
+          <a href="../blog.html" class="nav-link active">Blog</a>
+          <a href="../index.html#story" class="nav-link">The Story</a>
+        </nav>
+        <a
+          href="https://app.kaasi.com.lk/"
+          target="_blank"
+          class="cta-button"
+        >
+          <span>Go to App</span> <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <!-- Reading Progress Bar -->
+    <div class="w-full h-0.5 bg-gray-800 absolute bottom-0 left-0">
+        <div id="progress-bar" class="h-full bg-orange-500 transition-all duration-100 ease-linear"></div>
+    </div>
+    </header>
+
+
+
+    <div id="content-wrapper" class="relative z-10">
+      <main>
+        <article class="pt-40 pb-24">
+          <div class="container mx-auto px-6 max-w-4xl">
+            <header class="text-center mb-16 animate-fade-in-up">
+              <h1
+                class="text-4xl md:text-5xl font-bold text-white mb-6 md:leading-tight"
+              >
+                Kaasi v3 is Here: A New Home, New Features, and More!
+              </h1>
+              <div class="flex items-center justify-center gap-4 text-gray-400">
+                <div class="flex items-center gap-3">
+                  <img
+                    src="img/author/blog-aanjelo.jpg"
+                    alt="Aanjelo Salgado"
+                    class="w-10 h-10 rounded-full"
+                    onerror="this.onerror=null; this.src='https://placehold.co/40x40/1a1a1a/e67e26?text=A&font=satoshi';"
+                  />
+                  <span>Aanjelo Salgado</span>
+                </div>
+                <span class="text-gray-600">&bull;</span>
+                <span id="post-date">July 7, 2025</span>
+              </div>
+            </header>
+            
+            <!-- Header Image -->
+            <div class="mb-12 animate-fade-in-up" style="--delay: 0.2s">
+              <img
+                id="post-image"
+                src="img/kaasi-v3-changelog.jpg"
+                onerror="this.onerror=null; this.src='https://placehold.co/1200x630/18181b/3f3f46?text=Kaasi+v3+Update';"
+                alt="An abstract image representing growth and updates for Kaasi v3."
+                class="w-full h-auto max-h-[500px] object-cover rounded-xl border border-gray-800"
+              />
+            </div>
+
+            <div
+              id="post-content"
+              class="prose prose-invert max-w-none animate-fade-in-up"
+              style="--delay: 0.4s"
+            >
+              <p>
+                It's a big day for Kaasi! The project has continued to evolve since it was first made public, and today marks the launch of Kaasi v3, a major update that brings a new home, new features, and a clearer vision for the future. Let's dive into what's new.
+              </p>
+
+              <h2>A New Home: Kaasi.com.lk</h2>
+              <p>
+                The biggest news is that Kaasi has a new, official home! We've moved from the old GitHub page to a proper domain: <a href="https://kaasi.com.lk">kaasi.com.lk</a>.
+              </p>
+              <p>
+                Alongside the app, I've launched a full website to be the central hub. Here you'll find:
+              </p>
+              <ul class="list-disc list-inside">
+                  <li><strong>Info about Kaasi:</strong> For those just discovering the app, you can now find all the information about what Kaasi is and the features it offers.</li>
+                  <li><strong>The Blog:</strong> You're reading it right now! This is where I'll share financial insights, app updates, and guides to help you master your money.</li>
+                  <li><strong>What's Next:</strong> A dedicated section outlining the planned features for the future, so you always know what's on the roadmap.</li>
+              </ul>
+
+              <h2>What's New in the App?</h2>
+              <p>This update isn't just about the website. The app itself has also received some significant improvements.</p>
+              
+              <h3><strong>Track Daily Expense Fluctuations</strong></h3>
+              <p>While the chart showing your monthly expenses over the last year is still there, you can now toggle to a new 'daily expense fluctuation graph'. This new view shows the flow of your spending within the current month, making it much easier to see how your expenses change from day to day.</p>
+
+              <h3><strong>Quality of Life Improvements</strong></h3>
+              <p>I've also focused on a number of smaller fixes and improvements to make your day-to-day experience smoother:</p>
+              <ul class="list-disc list-inside">
+                  <li>Fixed several minor bugs and text inconsistencies.</li>
+                  <li>Improved how the app handles long descriptions for transactions, preventing text overflow.</li>
+                  <li>Added a footer with useful links and information.</li>
+              </ul>
+
+              <h2>Supporting Kaasi's Future</h2>
+              <p>Kaasi will always remain free to use. That's a core promise. However, building and maintaining the app, especially with the high cost of the AI subscriptions used in its development, does have its expenses. </p>
+              <p>If you find Kaasi helpful and want to support its continued development, I've now added an option to make a donation. Any amount is deeply appreciated and goes directly towards making the app better for everyone. </p>
+
+              <blockquote>
+                Your feedback is what shapes the future of Kaasi. If you have feature requests or recommendations, please don't hesitate to send me a message on Instagram at <a href="https://www.instagram.com/aanjelo.s" target="_blank">@aanjelo.s</a> or drop me an email at <a href="mailto:aanjelo99@gmail.com">aanjelo99@gmail.com</a>.
+              </blockquote>
+
+              <p>Thank you for being part of this journey. I'm excited to continue building a tool that makes managing our <span class="text-orange-500 font-semibold">කාසි</span> simpler for all of us in Sri Lanka.</p>
+            </div>
+
+            <div
+              class="mt-16 flex flex-col sm:flex-row justify-center gap-4 text-center animate-fade-in-up"
+              style="--delay: 0.6s"
+            >
+              <a href="../blog.html" class="cta-button-secondary py-3.5 flex items-center justify-center">
+                <i class="fas fa-arrow-left mr-2"></i> Back to All Posts
+              </a>
+              <a href="https://app.kaasi.com.lk/" target="_blank" class="cta-button cta-button-large flex items-center justify-center">
+                <span>Try Kaasi Now</span> <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+
+            <!-- Social Share Section -->
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center animate-fade-in-up" style="--delay: 0.7s">
+                <h3 class="text-lg font-semibold text-white mb-4">Share this post</h3>
+                <div class="flex items-center justify-center gap-4">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkaasi.com.lk%2Fblog%2Fkaasi-v3-changelog.html" target="_blank" class="social-share-link" aria-label="Share on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fkaasi.com.lk%2Fblog%2Fkaasi-v3-changelog.html&text=Kaasi%20v3%20is%20Here%3A%20A%20New%20Home%2C%20New%20Features%2C%20and%20More%21" target="_blank" class="social-share-link" aria-label="Share on X">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fkaasi.com.lk%2Fblog%2Fkaasi-v3-changelog.html&title=Kaasi%20v3%20is%20Here%3A%20A%20New%20Home%2C%20New%20Features%2C%20and%20More%21&summary=Announcing%20the%20Kaasi%20v3%20update%21..." target="_blank" class="social-share-link" aria-label="Share on LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?text=Kaasi%20v3%20is%20Here%3A%20A%20New%20Home%2C%20New%20Features%2C%20and%20More%21%20https%3A%2F%2Fkaasi.com.lk%2Fblog%2Fkaasi-v3-changelog.html" target="_blank" class="social-share-link" aria-label="Share on WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <footer class="relative z-10 border-t border-gray-800/50 bg-[#121212]">
+      <div
+        class="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-8"
+      >
+        <div class="flex items-center gap-3">
+          <img
+            src="../img/LogoIcon.svg"
+            alt="Kaasi Logo Icon"
+            class="h-6"
+            onerror="this.onerror=null; this.src='https://placehold.co/24x24/1a1a1a/e67e26?text=K&font=satoshi';"
+          />
+          <span class="text-gray-500 text-sm"
+            >&copy; 2025 Kaasi by Aanjelo Salgado.</span
+          >
+        </div>
+        <div class="flex items-center gap-6 text-gray-400">
+          <a
+            href="https://www.linkedin.com/company/kaasi-lk"
+            target="_blank"
+            class="hover:text-white transition-colors"
+            ><i class="fab fa-linkedin-in text-xl"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/kaasi.lk/"
+            target="_blank"
+            class="hover:text-white transition-colors"
+            ><i class="fab fa-instagram text-xl"></i
+          ></a>
+          <a
+            href="https://www.facebook.com/profile.php?id=61576800639923"
+            target="_blank"
+            class="hover:text-white transition-colors"
+            ><i class="fab fa-facebook-f text-xl"></i
+          ></a>
+        </div>
+        <div class="text-sm text-gray-500">
+          <p>Earn Well, and Spend Responsibly! 💸</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Go to Top Button -->
+    <a
+      href="#"
+      id="go-to-top-button"
+      title="Go to top"
+      class="fixed bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center rounded-md bg-orange-500 text-white shadow-lg opacity-0 transition-all duration-300 pointer-events-none hover:bg-orange-600 hover:scale-110"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="../blog-data.js"></script>
+    <script src="../script.js"></script>
+  </body>
+</html>
