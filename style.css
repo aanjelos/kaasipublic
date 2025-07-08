@@ -16,10 +16,13 @@ html {
 }
 
 body {
-  background-color: var(--bg-dark);
-  font-family: var(--font-family-sans);
-  color: #a1a1aa; /* Tailwind zinc-400 */
-  overflow-x: hidden;
+    background-color: var(--bg-dark);
+    font-family: var(--font-family-sans);
+    color: #a1a1aa; /* Tailwind zinc-400 */
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
 }
 
 #page-container {
