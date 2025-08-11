@@ -13,6 +13,17 @@
 
 const blogPosts = [
   {
+    id: "history-of-payment-cards",
+    title: "Who Invented the Credit Card? The Story Behind the Plastic in Your Wallet",
+    date: "2025-08-11",
+    author: "Aanjelo Salgado",
+    image: "blog/img/history-of-payment-cards.jpg",
+    image_alt: "The founder of Credit Cards",
+    url: "blog/history-of-payment-cards.html",
+    excerpt:
+      "Explore the fascinating history of payment cards, from early charge plates to the Diners Club card and the modern EMV chip.",
+  },
+  {
     id: "kaasi-v3-changelog",
     title: "Kaasi v3 is Here: A New Home, New Features, and More!",
     date: "2025-07-15",
