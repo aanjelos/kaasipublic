@@ -12,6 +12,17 @@
 // =================================================================
 
 const blogPosts = [
+    {
+    id: "kaasi-v4-changelog",
+    title: "Kaasi V4: More Control, Deeper Insights",
+    date: "2025-09-07",
+    author: "Aanjelo Salgado",
+    image: "blog/img/kaasi-v4-changelog.jpg",
+    image_alt: "Image showing v4 in a black background.",
+    url: "blog/kaasi-v4-changelog.html",
+    excerpt:
+      "Introducing Kaasi V4! Export detailed monthly PDF reports, hide unused accounts, enjoy a supercharged search, and a more polished interface.",
+  },
   {
     id: "history-of-payment-cards",
     title: "Who Invented the Credit Card? The Story Behind the Plastic in Your Wallet",
