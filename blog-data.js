@@ -12,7 +12,18 @@
 // =================================================================
 
 const blogPosts = [
-    {
+  {
+    id: "kaasi-v5-changelog",
+    title: "Kaasi V5: Cloud Backups & Cross-Device Sync",
+    date: "2025-12-15",
+    author: "Aanjelo Salgado",
+    image: "blog/img/kaasi-v5-changelog.jpg",
+    image_alt: "Image showing v5 in a black background.",
+    url: "blog/kaasi-v5-changelog.html",
+    excerpt:
+      "Kaasi V5 introduces optional Cloud Backups! Sync data across devices, customize dashboard shortcuts, and enjoy improved data management.",
+  },
+  {
     id: "kaasi-v4-changelog",
     title: "Kaasi V4: More Control, Deeper Insights",
     date: "2025-09-07",
@@ -25,7 +36,8 @@ const blogPosts = [
   },
   {
     id: "history-of-payment-cards",
-    title: "Who Invented the Credit Card? The Story Behind the Plastic in Your Wallet",
+    title:
+      "Who Invented the Credit Card? The Story Behind the Plastic in Your Wallet",
     date: "2025-08-11",
     author: "Aanjelo Salgado",
     image: "blog/img/history-of-payment-cards.jpg",
