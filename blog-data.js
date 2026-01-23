@@ -13,6 +13,17 @@
 
 const blogPosts = [
   {
+    id: "measure-to-manage",
+    title: "Measure to Manage: Surviving the Cost of Living",
+    date: "2026-01-23",
+    author: "Aanjelo Salgado",
+    image: "blog/img/measure-to-manage.jpg",
+    image_alt: "Image showing v5 in a black background.",
+    url: "blog/measure-to-manage.html",
+    excerpt:
+      "The crisis might be over, but the high prices remain. Learn why tracking your expenses is the key to mastering the 'new normal' cost of living in Sri Lanka.",
+  },
+  {
     id: "kaasi-v5-changelog",
     title: "Kaasi V5: Cloud Backups & Cross-Device Sync",
     date: "2025-12-15",

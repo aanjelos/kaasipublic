@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Measure to Manage: Surviving the Cost of Living</title>
+
+    <meta
+      name="description"
+      content="The crisis might be over, but the high prices remain. Learn why tracking your expenses is the key to mastering the 'new normal' cost of living in Sri Lanka."
+    />
+    <meta
+      name="keywords"
+      content="cost of living sri lanka, expense tracking, inflation tips, personal finance, kaasi blog, financial literacy"
+    />
+    <meta name="author" content="Aanjelo Salgado - With Gemini AI" />
+
+    <meta
+      property="og:title"
+      content="Measure to Manage: Surviving the Cost of Living"
+    />
+    <meta
+      property="og:description"
+      content="The crisis might be over, but the high prices remain. Learn why tracking your expenses is the key to mastering the 'new normal' cost of living in Sri Lanka."
+    />
+    <meta
+      property="og:image"
+      content="https://kaasi.com.lk/blog/img/measure-to-manage.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://kaasi.com.lk/blog/measure-to-manage.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2025-10-24T10:00:00Z" />
+    <meta
+      property="article:author"
+      content="Aanjelo Salgado - With Gemini AI"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Measure to Manage: Surviving the Cost of Living"
+    />
+    <meta
+      name="twitter:description"
+      content="The crisis might be over, but the high prices remain. Learn why tracking your expenses is the key to mastering the 'new normal' cost of living in Sri Lanka."
+    />
+    <meta
+      name="twitter:image"
+      content="https://kaasi.com.lk/blog/img/measure-to-manage.jpg"
+    />
+
+    <link rel="icon" href="../img/LogoIcon.svg" type="image/svg+xml" />
+
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style.css" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2FSRSWZB28"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-2FSRSWZB28");
+    </script>
+  </head>
+
+  <body class="bg-[#121212] text-gray-300 font-satoshi antialiased">
+    <canvas
+      id="bg-canvas"
+      class="fixed top-0 left-0 w-full h-full z-0"
+    ></canvas>
+    <div class="aurora-overlay"></div>
+
+    <header
+      id="header"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    >
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="../index.html" class="flex items-center gap-2">
+          <img
+            src="../img/FullLogo.svg"
+            alt="Kaasi Logo"
+            class="h-8"
+            onerror="this.onerror=null; this.src='https://placehold.co/100x32/1a1a1a/e67e26?text=Kaasi&font=satoshi';"
+          />
+        </a>
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="../index.html#features" class="nav-link">Features</a>
+          <a href="../index.html#whats-next" class="nav-link">What's Next</a>
+          <a href="../blog.html" class="nav-link active">Blog</a>
+          <a href="../index.html#story" class="nav-link">The Story</a>
+        </nav>
+        <a href="https://app.kaasi.com.lk/" target="_blank" class="cta-button">
+          <span>Go to App</span> <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <!-- Reading Progress Bar -->
+      <div class="w-full h-0.5 bg-gray-800 absolute bottom-0 left-0">
+        <div
+          id="progress-bar"
+          class="h-full bg-orange-500 transition-all duration-100 ease-linear"
+        ></div>
+      </div>
+    </header>
+
+    <div id="content-wrapper" class="relative z-10">
+      <main>
+        <article class="pt-40 pb-24">
+          <div class="container mx-auto px-6 max-w-4xl">
+            <header class="text-center mb-16 animate-fade-in-up">
+              <h1
+                class="text-4xl md:text-5xl font-bold text-white mb-6 md:leading-tight"
+              >
+                Measure to Manage: <br /><span class="text-gray-400"
+                  >Surviving the Cost of Living</span
+                >
+              </h1>
+              <div class="flex items-center justify-center gap-4 text-gray-400">
+                <div class="flex items-center gap-3">
+                  <img
+                    src="img/author/blog-aanjelo.jpg"
+                    alt="Aanjelo Salgado"
+                    class="w-10 h-10 rounded-full"
+                    onerror="this.onerror=null; this.src='https://placehold.co/40x40/1a1a1a/e67e26?text=A&font=satoshi';"
+                  />
+                  <span>Aanjelo Salgado - With Gemini AI</span>
+                </div>
+                <span class="text-gray-600">&bull;</span>
+                <span id="post-date">January 23, 2026</span>
+              </div>
+            </header>
+
+            <!-- Header Image -->
+            <div class="mb-12 animate-fade-in-up" style="--delay: 0.2s">
+              <img
+                id="post-image"
+                src="img/measure-to-manage.jpg"
+                onerror="this.onerror=null; this.src='https://placehold.co/1200x630/18181b/3f3f46?text=Measure+to+Manage';"
+                alt="Financial chart showing cost management strategies"
+                class="w-full h-auto max-h-[500px] object-cover rounded-xl border border-gray-800"
+              />
+            </div>
+
+            <div
+              id="post-content"
+              class="prose prose-invert max-w-none animate-fade-in-up"
+              style="--delay: 0.4s"
+            >
+              <p class="text-xl text-white font-medium">
+                The peak of the crisis may have passed, but the prices haven't.
+                Inflation has cooled, but our grocery bills are still burning.
+                In this "new normal," focusing on prices you can't control is
+                pointless. But you <em class="text-orange-500 not-italic">can</em>
+                control your efficiency.
+              </p>
+
+              <p>
+                We've all been there. You walk into Keells or Cargills, grab the
+                essentials, and the bill hits LKR 15,000 before you've even
+                reached the rice aisle. It’s painful. It’s stressful. And for
+                many of us, the natural reaction is the "Ostrich Method": swipe
+                the card, crumple the receipt, and try not to think about it
+                until the salary hits.
+              </p>
+
+              <h2>The "Ostrich Method" is Costing You</h2>
+              <p>
+                Ignoring your outflow because it hurts to look at is a survival
+                mechanism, but it’s a dangerous one. When you don't track, you
+                operate on feelings, not facts. You <em>feel</em> like you're
+                broke because of the big bills (Rent, LECO, Water), but often,
+                the real leaks are invisible.
+              </p>
+              <p>
+                That daily tuk-tuk ride because you woke up 10 minutes late?
+                That LKR 450 short-eat run? That subscription you forgot to
+                cancel? Without measuring them, they don't exist in your mind.
+                But your bank balance knows they do.
+              </p>
+
+              <blockquote class="border-l-4 border-orange-500 pl-4 italic">
+                "You can't manage what you don't measure." <br />
+                <span class="text-sm text-gray-500 not-italic"
+                  >— Peter Drucker (Management Consultant)</span
+                >
+              </blockquote>
+
+              <h2>Data Beats Anxiety</h2>
+              <p>
+                Anxiety thrives on the unknown.
+                <em>"Will I have enough for the loan payment?"</em> is a
+                terrifying question if you don't have the data.
+              </p>
+              <p>
+                Tracking creates a boundary. When you use a tool like
+                <strong>Kaasi</strong> to log every rupee, you aren't just
+                recording history; you are building a map. Suddenly, you see
+                that you spent LKR 8,000 on "Snacks" last month. That’s a shock,
+                but it’s also <strong>power</strong>. Now you have a choice. You
+                can cut that down to LKR 4,000 and instantly give yourself a
+                "raise" of 4,000 rupees.
+              </p>
+
+              <h2>How to Start (Without Going Crazy)</h2>
+              <p>
+                You don't need to be an accountant. You just need to build the
+                habit.
+              </p>
+              <ul>
+                <li>
+                  <strong>Track Everything for 30 Days:</strong> Don't judge
+                  yourself. Just observe. Buy a tea? Log it. Pay the bus fare?
+                  Log it.
+                </li>
+                <li>
+                  <strong>Use Local Context:</strong> Don't struggle with USD
+                  apps. Use an app built for LKR that understands our context
+                  (like Credit Card installments vs. cash transactions).
+                </li>
+                <li>
+                  <strong>Review Once a Week:</strong> Open your "Monthly
+                  Breakdown" on Sunday. Just knowing where the money went brings
+                  a surprising amount of peace.
+                </li>
+              </ul>
+
+              <h2>The Bottom Line</h2>
+              <p>
+                Surviving the current cost of living isn't just about earning
+                more; it's about optimizing what you have. The first step to
+                efficiency is visibility. Stop hiding from the numbers. Measure
+                them, manage them, and take back control.
+              </p>
+            </div>
+
+            <div
+              class="mt-16 flex flex-col sm:flex-row justify-center gap-4 text-center animate-fade-in-up"
+              style="--delay: 0.6s"
+            >
+              <a
+                href="../blog.html"
+                class="cta-button-secondary py-3.5 flex items-center justify-center"
+              >
+                <i class="fas fa-arrow-left mr-2"></i> Back to All Posts
+              </a>
+              <a
+                href="https://app.kaasi.com.lk/"
+                target="_blank"
+                class="cta-button cta-button-large flex items-center justify-center"
+              >
+                <span>Try Kaasi Now</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+
+            <!-- Social Share Section -->
+            <div
+              class="mt-12 pt-8 border-t border-gray-800 text-center animate-fade-in-up"
+              style="--delay: 0.7s"
+            >
+              <h3 class="text-lg font-semibold text-white mb-4">
+                Share this post
+              </h3>
+              <div class="flex items-center justify-center gap-4">
+                <a
+                  href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkaasi.com.lk%2Fblog%2Fmeasure-to-manage.html"
+                  target="_blank"
+                  class="social-share-link"
+                  aria-label="Share on Facebook"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fkaasi.com.lk%2Fblog%2Fmeasure-to-manage.html&text=Measure%20to%20Manage%3A%20Surviving%20the%20Cost%20of%20Living"
+                  target="_blank"
+                  class="social-share-link"
+                  aria-label="Share on X"
+                >
+                  <i class="fab fa-x-twitter"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fkaasi.com.lk%2Fblog%2Fmeasure-to-manage.html&title=Measure%20to%20Manage%3A%20Surviving%20the%20Cost%20of%20Living"
+                  target="_blank"
+                  class="social-share-link"
+                  aria-label="Share on LinkedIn"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a
+                  href="https://api.whatsapp.com/send?text=Measure%20to%20Manage%3A%20Surviving%20the%20Cost%20of%20Living%20https%3A%2F%2Fkaasi.com.lk%2Fblog%2Fmeasure-to-manage.html"
+                  target="_blank"
+                  class="social-share-link"
+                  aria-label="Share on WhatsApp"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <footer class="relative z-10 border-t border-gray-800/50 bg-[#121212]">
+      <div
+        class="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-8"
+      >
+        <div class="flex items-center gap-3">
+          <img
+            src="../img/LogoIcon.svg"
+            alt="Kaasi Logo Icon"
+            class="h-6"
+            onerror="this.onerror=null; this.src='https://placehold.co/24x24/1a1a1a/e67e26?text=K&font=satoshi';"
+          />
+          <span class="text-gray-500 text-sm"
+            >&copy; 2025 Kaasi by Aanjelo Salgado.</span
+          >
+        </div>
+        <div class="flex items-center gap-6 text-gray-400">
+          <a
+            href="https://www.linkedin.com/company/kaasi-lk"
+            target="_blank"
+            class="hover:text-white transition-colors"
+            ><i class="fab fa-linkedin-in text-xl"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/kaasi.com.lk/"
+            target="_blank"
+            class="hover:text-white transition-colors"
+            ><i class="fab fa-instagram text-xl"></i
+          ></a>
+          <a
+            href="https://www.facebook.com/profile.php?id=61576800639923"
+            target="_blank"
+            class="hover:text-white transition-colors"
+            ><i class="fab fa-facebook-f text-xl"></i
+          ></a>
+        </div>
+        <div class="text-sm text-gray-500">
+          <p>Earn Well, and Spend Responsibly! 💸</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Go to Top Button -->
+    <a
+      href="#"
+      id="go-to-top-button"
+      title="Go to top"
+      class="fixed bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center rounded-md bg-orange-500 text-white shadow-lg opacity-0 transition-all duration-300 pointer-events-none hover:bg-orange-600 hover:scale-110"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="../blog-data.js"></script>
+    <script src="../script.js"></script>
+  </body>
+</html>
