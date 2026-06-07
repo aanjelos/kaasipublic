@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title | default("Kaasi - The Lankan Finance Manager 🇱🇰") }}</title>
+
+    <!-- Meta Tags for SEO and Social Sharing -->
+    <meta
+      name="description"
+      content="{{ excerpt | default('Kaasi helps Sri Lankans manage money (LKR) effortlessly. Track daily transactions, monitor account balances, and get monthly reports. Your financial data is stored securely on your device.') }}"
+    />
+    <meta
+      name="keywords"
+      content="expense tracker, finance app, sri lanka, lkr, budget, money management, personal finance, kaasi"
+    />
+    <meta name="author" content="{{ author | default('Aanjelo Salgado') }}" />
+
+    <meta property="og:title" content="{{ title | default('Kaasi - The Lankan Finance Manager 🇱🇰') }}" />
+    <meta
+      property="og:description"
+      content="{{ excerpt | default('Kaasi helps Sri Lankans manage money (LKR) effortlessly. Track daily transactions, monitor account balances, and get monthly reports.') }}"
+    />
+    <meta property="og:image" content="https://kaasi.com.lk{{ image | default('/img/Metaimg.jpg') }}" />
+    <meta property="og:url" content="https://kaasi.com.lk{{ page.url }}" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="{{ title | default('Kaasi - The Lankan Finance Manager 🇱🇰') }}"
+    />
+    <meta
+      name="twitter:description"
+      content="{{ excerpt | default('Kaasi helps Sri Lankans manage money (LKR) effortlessly. Track daily transactions, monitor account balances, and get monthly reports.') }}"
+    />
+    <meta name="twitter:image" content="https://kaasi.com.lk{{ image | default('/img/Metaimg.jpg') }}" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/img/LogoIcon.svg" type="image/svg+xml" />
+
+    <!-- Stylesheets and Fonts -->
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/style.css" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2FSRSWZB28"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-2FSRSWZB28");
+    </script>
+  </head>
+
+  <body class="bg-[#121212] text-gray-300 font-satoshi antialiased">
+    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full z-0"></canvas>
+    <div class="aurora-overlay"></div>
+
+    <div id="page-container" class="relative z-10 flex flex-col min-h-screen">
+      <header
+        id="header"
+        class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      >
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+          <a href="/" class="flex items-center gap-2">
+            <img
+              src="/img/FullLogo.svg"
+              alt="Kaasi Logo"
+              class="h-8"
+              onerror="this.onerror=null; this.src='https://placehold.co/100x32/1a1a1a/e67e26?text=Kaasi&font=satoshi';"
+            />
+          </a>
+          <nav class="hidden md:flex items-center gap-8">
+            <a href="/#features" class="nav-link {% if page.url == '/#features' %}active{% endif %}">Features</a>
+            <a href="/#whats-next" class="nav-link {% if page.url == '/#whats-next' %}active{% endif %}">What's Next</a>
+            <a href="/blog/" class="nav-link {% if '/blog/' in page.url %}active{% endif %}">Blog</a>
+            <a href="/#story" class="nav-link {% if page.url == '/#story' %}active{% endif %}">The Story</a>
+          </nav>
+          <a
+            href="https://app.kaasi.com.lk/"
+            target="_blank"
+            class="cta-button"
+          >
+            <span>Go to App</span> <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        {% if isPost %}
+        <!-- Reading Progress Bar for Blogs -->
+        <div class="w-full h-0.5 bg-gray-800 absolute bottom-0 left-0">
+          <div
+            id="progress-bar"
+            class="h-full bg-orange-500 transition-all duration-100 ease-linear"
+          ></div>
+        </div>
+        {% endif %}
+      </header>
+
+      <div id="content-wrapper" class="flex-grow">
+        <main>
+          {{ content | safe }}
+        </main>
+      </div>
+
+      <!-- Footer -->
+      <footer class="border-t border-gray-800/50 bg-[#121212] mt-auto">
+        <div class="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-8">
+          <div class="flex items-center gap-3">
+            <img
+              src="/img/LogoIcon.svg"
+              alt="Kaasi Logo Icon"
+              class="h-6"
+              onerror="this.onerror=null; this.src='https://placehold.co/24x24/1a1a1a/e67e26?text=K&font=satoshi';"
+            />
+            <span class="text-gray-500 text-sm">&copy; 2025 Kaasi by Aanjelo Salgado.</span>
+          </div>
+          <div class="flex items-center gap-6 text-gray-400">
+            <a href="https://www.linkedin.com/company/kaasi-lk" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-linkedin-in text-xl"></i></a>
+            <a href="https://www.instagram.com/kaasi.com.lk/" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-instagram text-xl"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61576800639923" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-facebook-f text-xl"></i></a>
+          </div>
+          <div class="text-sm text-gray-500">
+            <p>Earn Well, and Spend Responsibly! 💸</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Modals (Only included on the homepage really, but harmless globally) -->
+    <div
+      id="donate-modal"
+      class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden"
+    >
+      <div class="modal-content bg-[#18181B] rounded-2xl p-8 max-w-md w-full border border-gray-700 relative">
+        <button id="close-modal-button" class="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors">
+          <i class="fas fa-times text-2xl"></i>
+        </button>
+        <h3 class="text-2xl font-bold text-white mb-6">Bank Details</h3>
+        <div class="space-y-6">
+          <div>
+            <p class="font-bold text-lg text-orange-400">HNB (Negombo)</p>
+            <p class="text-gray-300">Name: MALSW Goonaratne</p>
+            <div class="flex items-center justify-between mt-2 bg-gray-800 p-3 rounded-lg">
+              <span class="text-lg text-gray-200">0240 2065 9091</span>
+              <button class="copy-button bg-gray-700 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded-md transition-colors" data-copy-text="024020659091">Copy</button>
+            </div>
+          </div>
+          <div>
+            <p class="font-bold text-lg text-orange-400">Commercial Bank (Negombo 2)</p>
+            <p class="text-gray-300">Name: MALSW Goonaratne</p>
+            <div class="flex items-center justify-between mt-2 bg-gray-800 p-3 rounded-lg">
+              <span class="text-lg text-gray-200">8009 650 486</span>
+              <button class="copy-button bg-gray-700 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded-md transition-colors" data-copy-text="8009650486">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="privacy-policy-modal"
+      class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden"
+    >
+      <div class="modal-content bg-[#18181B] rounded-2xl p-8 max-w-2xl w-full border border-gray-700 relative">
+        <button id="close-privacy-modal-button" class="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors">
+          <i class="fas fa-times text-2xl"></i>
+        </button>
+        <h3 class="text-2xl font-bold text-white mb-6">Privacy Policy</h3>
+        <div class="prose prose-invert max-w-none text-gray-300 space-y-4">
+          <p>By default, we do not collect any of your personal or financial data. Everything you enter into Kaasi is stored exclusively in your browser's LocalStorage. Your data stays on your device unless you explicitly choose to use Cloud Sync.</p>
+          <p><strong>Cloud Sync (Optional):</strong> If you choose to enable cloud backups, you will be asked to sign in with Google. We use Supabase (a secure backend service) to store your encrypted backup file. This allows you to restore your data on other devices. We only store the data you choose to sync, and you can request deletion of your cloud data at any time.</p>
+          <p>Additionally, the email address you use to sign in for Cloud Sync may occasionally be used to send you important updates or promotional emails regarding Kaasi. We respect your inbox and promise never to spam you with constant emails.</p>
+          <p>Because the primary data source is your local device, we strongly recommend you perform regular backups (either locally or via the cloud feature). We do not take responsibility for data loss caused by browser clearing or device failure.</p>
+          <p>By its nature, Kaasi requires browser cookies and local storage to function. These are enabled by default. If you do not agree to this, please clear your browser data for Kaasi and discontinue using the application.</p>
+          <p>We use Google Analytics on the website (kaasi.com.lk) and the web app (app.kaasi.com.lk) to get a general overview of visitor traffic and user interactions. This service may collect anonymous data such as your device's operating system and browser type. No personal or identifiable financial information is ever collected or shared by analytics.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Go to Top Button -->
+    <a
+      href="#"
+      id="go-to-top-button"
+      title="Go to top"
+      class="fixed bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center rounded-md bg-orange-500 text-white shadow-lg opacity-0 transition-all duration-300 pointer-events-none hover:bg-orange-600 hover:scale-110"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>

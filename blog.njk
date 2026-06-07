@@ -1,0 +1,38 @@
+---
+layout: layout.njk
+title: Kaasi Blog - Financial Insights
+---
+<!-- Blog Hero Section -->
+            <section class="pt-40 pb-16 text-center">
+                <div class="container mx-auto px-6">
+                    <div class="animate-fade-in-up">
+                        <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
+                            The Blog Wallet
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
+                           Financial insights, app updates, and guides to help you master your money.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blog Grid Section -->
+            <section class="py-16">
+                <div class="container mx-auto px-6">
+                    <div id="all-posts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        {% set posts = collections.post | reverse %}
+                        {% for post in posts %}
+                        <a href="{{ post.url }}" class="blog-card animate-on-scroll" style="--delay: {{ loop.index0 * 0.1 }}s">
+                            <img src="{{ post.data.image }}" alt="{{ post.data.title }}" class="blog-card-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/18181b/3f3f46?text=Image+Not+Found';">
+                            <div class="p-6 flex flex-col flex-grow">
+                                <span class="blog-card-date">{{ post.date | dateFilter }}</span>
+                                <h3 class="blog-card-title">{{ post.data.title }}</h3>
+                                <p class="blog-card-excerpt mt-auto">{{ post.data.excerpt }}</p>
+                            </div>
+                        </a>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </section>

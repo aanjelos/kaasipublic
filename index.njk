@@ -1,0 +1,370 @@
+---
+layout: layout.njk
+---
+<!-- Hero Section -->
+          <section
+            class="min-h-screen flex items-center justify-center pt-40 pb-20 text-center overflow-hidden"
+          >
+            <div class="container mx-auto px-6">
+              <div class="animate-fade-in-up">
+                <img
+                  src="img/FullLogo.svg"
+                  alt="Kaasi Logo"
+                  class="h-12 md:h-16 mx-auto mb-8"
+                  onerror="this.onerror=null; this.src='https://placehold.co/200x64/121212/e67e26?text=Kaasi&font=satoshi';"
+                />
+                <h1
+                  class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+                >
+                  The Lankan Finance Manager 🇱🇰
+                </h1>
+                <p
+                  class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10"
+                >
+                  Track expenses, manage accounts, and see where your money
+                  goes. Kaasi is a simple, private, and powerful tool to master
+                  your LKR.
+                </p>
+                <div class="flex items-center justify-center gap-4">
+                  <a
+                    href="https://app.kaasi.com.lk/"
+                    target="_blank"
+                    class="cta-button-large"
+                  >
+                    Launch Kaasi
+                  </a>
+                  <a href="#features" class="cta-button-secondary">
+                    Learn More <i class="fas fa-arrow-down ml-2 text-xs"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- App Mockup -->
+              <div class="mt-20 animate-fade-in-up" style="--delay: 0.3s">
+                <div
+                  id="mockup-container"
+                  class="relative mx-auto w-full max-w-4xl"
+                >
+                  <div class="absolute -inset-2">
+                    <div
+                      class="w-full h-full max-w-4xl mx-auto rounded-2xl bg-gradient-to-r from-orange-600 via-orange-400 to-orange-600 opacity-10 blur-3xl"
+                    ></div>
+                  </div>
+                  <img
+                    id="mockup-image"
+                    src="img/dash.png"
+                    onerror="this.onerror=null; this.src='https://placehold.co/1200x600/18181b/3f3f46?text=Kaasi+Dashboard';"
+                    alt="Kaasi App Dashboard Mockup"
+                    class="relative w-full h-auto object-cover object-top rounded-xl border-2 border-gray-800/80 shadow-2xl shadow-black/80"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Features Section (Bento Grid) -->
+          <section id="features" class="py-24 md:py-32">
+            <div class="container mx-auto px-6">
+              <div class="text-center mb-16">
+                <h2
+                  class="text-4xl md:text-5xl font-bold text-white mb-4 animate-on-scroll"
+                >
+                  A Powerful Toolkit for Your Rupees
+                </h2>
+                <p
+                  class="text-lg text-gray-400 animate-on-scroll"
+                  style="--delay: 0.1s"
+                >
+                  Everything you need to be in control of your financial life.
+                </p>
+              </div>
+
+              <div class="flex flex-col gap-6">
+                <!-- Top Row -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                  <div class="bento-card lg:col-span-2 animate-on-scroll">
+                    <i class="fas fa-chart-pie bento-icon text-blue-400"></i>
+                    <h3 class="bento-title">Detailed Expense Breakdowns</h3>
+                    <p class="bento-text">
+                      Track your daily spending and get a clear, visual
+                      breakdown of your expenses each month. See exactly where
+                      your money goes.
+                    </p>
+                    <img
+                      src="img/month.png"
+                      onerror="this.onerror=null; this.src='https://placehold.co/800x400/18181b/3f3f46?text=Monthly+UI';"
+                      alt="Dashboard UI"
+                      class="bento-image-large"
+                    />
+                  </div>
+
+                  <!-- Card 2: Privacy -->
+                  <div
+                    class="bento-card animate-on-scroll"
+                    style="--delay: 0.1s"
+                  >
+                    <i class="fas fa-user-shield bento-icon text-green-400"></i>
+                    <h3 class="bento-title">
+                      100% Private - With Optional Cloud Sync
+                    </h3>
+                    <p class="bento-text">
+                      By default, all data is stored exclusively in your browser
+                      using localStorage. You can optionally enable secure Cloud
+                      Sync (powered by Supabase) to backup your data.
+                      <button
+                        id="open-privacy-policy"
+                        class="transition-colors underline font-medium hover:text-orange-500"
+                      >
+                        Read the privacy policy here.
+                      </button>
+                    </p>
+                    <!-- THIS DIV WAS MISSING AND HAS BEEN RESTORED -->
+                    <div
+                      class="mt-4 flex justify-center items-center h-full bg-grid-pattern rounded-lg"
+                    >
+                      <i class="fas fa-lock text-6xl text-green-400/50"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Bottom Row -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div
+                    class="bento-card animate-on-scroll"
+                    style="--delay: 0.2s"
+                  >
+                    <i
+                      class="fas fa-hand-holding-usd bento-icon text-red-400"
+                    ></i>
+                    <h3 class="bento-title">Debts & Receivables</h3>
+                    <p class="bento-text">
+                      Easily track who you owe and who owes you. Never lose
+                      track of a friendly loan again.
+                    </p>
+                  </div>
+
+                  <div
+                    class="bento-card animate-on-scroll"
+                    style="--delay: 0.3s"
+                  >
+                    <i class="fas fa-sliders-h bento-icon text-orange-400"></i>
+                    <h3 class="bento-title">Fully Customizable</h3>
+                    <p class="bento-text">
+                      Rename accounts, add or remove expense categories, and set
+                      credit card limits. Make Kaasi truly yours.
+                    </p>
+                  </div>
+
+                  <div
+                    class="bento-card animate-on-scroll"
+                    style="--delay: 0.4s"
+                  >
+                    <i
+                      class="fas fa-file-export bento-icon text-purple-400"
+                    ></i>
+                    <h3 class="bento-title">Data Management</h3>
+                    <p class="bento-text">
+                      Your data is yours. Export and import your entire
+                      financial history with a single click.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- What's Next Section -->
+          <section id="whats-next" class="py-24 md:py-32">
+            <div class="container mx-auto px-6">
+              <div class="text-center mb-16">
+                <h2
+                  class="text-4xl md:text-5xl font-bold text-white mb-4 animate-on-scroll"
+                >
+                  Always Getting Better
+                </h2>
+                <p
+                  class="text-lg text-gray-400 animate-on-scroll"
+                  style="--delay: 0.1s"
+                >
+                  Kaasi is actively developed. Here's what's on the horizon.
+                </p>
+              </div>
+              <div
+                class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto"
+              >
+                <div class="next-feature-card animate-on-scroll">
+                  <i class="fas fa-mobile-alt"></i>
+                  <h3>Device Installation</h3>
+                  <p class="text-sm">Install Kaasi directly to your home screen for an offline, native experience.</p>
+                </div>
+                <div class="next-feature-card animate-on-scroll" style="--delay: 0.1s">
+                  <i class="fas fa-palette"></i>
+                  <h3>Themes & Accents</h3>
+                  <p class="text-sm">Personalize the app with custom colors and a crisp new Light Mode.</p>
+                </div>
+                <div class="next-feature-card animate-on-scroll" style="--delay: 0.2s">
+                  <i class="fas fa-shield-halved"></i>
+                  <h3>PIN Lock Security</h3>
+                  <p class="text-sm">Adding a secure 4-digit PIN lock to keep your financial data strictly private.</p>
+                </div>
+                <div class="next-feature-card animate-on-scroll" style="--delay: 0.3s">
+                  <i class="fas fa-bullseye"></i>
+                  <h3>Category Budgets</h3>
+                  <p class="text-sm">Set and track monthly spending limits for specific categories.</p>
+                </div>
+                <div class="next-feature-card animate-on-scroll" style="--delay: 0.4s">
+                  <i class="fas fa-calculator"></i>
+                  <h3>Inbuilt Calculator</h3>
+                  <p class="text-sm">Perform simple math directly inside amount input fields.</p>
+                </div>
+                <div class="next-feature-card animate-on-scroll" style="--delay: 0.5s">
+                  <i class="fas fa-cloud-arrow-up"></i>
+                  <h3>Cloud Backups</h3>
+                  <p class="text-sm">Optional, automatic cloud backups so you never lose your data.</p>
+                </div>
+                <div class="next-feature-card animate-on-scroll" style="--delay: 0.6s">
+                  <i class="fas fa-sliders-h"></i>
+                  <h3>Dashboard Layout</h3>
+                  <p class="text-sm">More ways to declutter your dashboard by hiding unused sections.</p>
+                </div>
+                <div class="next-feature-card animate-on-scroll" style="--delay: 0.7s">
+                  <i class="fas fa-credit-card"></i>
+                  <h3>Credit Cards</h3>
+                  <p class="text-sm">Refining the interface to make tracking card payments effortless.</p>
+                </div>
+                <div class="next-feature-card animate-on-scroll" style="--delay: 0.8s">
+                  <i class="fas fa-eye-slash"></i>
+                  <h3>Hidden Categories</h3>
+                  <p class="text-sm">Exclude specific transaction categories from your charts and reports.</p>
+                </div>
+                <div class="next-feature-card animate-on-scroll" style="--delay: 0.9s">
+                  <i class="fas fa-bars-progress"></i>
+                  <h3>Debt Progress</h3>
+                  <p class="text-sm">Dynamic visual progress bars to help track partial payments.</p>
+                </div>
+                <div class="next-feature-card animate-on-scroll" style="--delay: 1.0s">
+                  <i class="fas fa-filter"></i>
+                  <h3>Advanced Search</h3>
+                  <p class="text-sm">Building granular date, amount, and category filters.</p>
+                </div>
+                <div class="next-feature-card animate-on-scroll" style="--delay: 1.1s">
+                  <i class="fas fa-hand-pointer"></i>
+                  <h3>Mobile Experience</h3>
+                  <p class="text-sm">Interaction improvements designed for a premium mobile feel.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- From the Blog Section -->
+          <section
+            id="blog-section"
+            class="py-24 md:py-32 bg-gray-900/20 border-y border-gray-800/60"
+          >
+            <div class="container mx-auto px-6">
+              <div class="text-center mb-16">
+                <h2
+                  class="text-4xl md:text-5xl font-bold text-white mb-4 animate-on-scroll"
+                >
+                  From the Blog
+                </h2>
+                <p
+                  class="text-lg text-gray-400 animate-on-scroll"
+                  style="--delay: 0.1s"
+                >
+                  Financial insights, app updates, and guides to help you master
+                  your money.
+                </p>
+              </div>
+              <div
+                id="recent-posts-container"
+                class="grid grid-cols-1 md:grid-cols-3 gap-8"
+              >
+                {% set posts = collections.post | reverse %}
+
+                
+                {% for post in posts.slice(0, 3) %}
+                <a href="{{ post.url }}" class="blog-card animate-on-scroll" style="--delay: {{ loop.index0 * 0.1 }}s">
+                    <img src="{{ post.data.image }}" alt="{{ post.data.title }}" class="blog-card-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/18181b/3f3f46?text=Image+Not+Found';">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <span class="blog-card-date">{{ post.date | dateFilter }}</span>
+                        <h3 class="blog-card-title">{{ post.data.title }}</h3>
+                        <p class="blog-card-excerpt mt-auto">{{ post.data.excerpt }}</p>
+                    </div>
+                </a>
+                {% endfor %}
+
+
+              </div>
+              <div
+                class="text-center mt-12 animate-on-scroll"
+                style="--delay: 0.3s"
+              >
+                <a href="/blog/" class="cta-button-secondary">
+                  View All Posts <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <!-- Project Story Section -->
+          <section id="story" class="py-24 md:py-32">
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+              <img
+                src="img/AanjeloNoText.svg"
+                alt="Aanjelo Salgado Logo"
+                class="h-12 mx-auto mb-6 animate-on-scroll"
+                onerror="this.onerror=null; this.src='https://placehold.co/100x48/121212/e67e26?text=AS&font=satoshi';"
+              />
+              <h2
+                class="text-3xl md:text-4xl font-bold text-white mb-6 animate-on-scroll"
+                style="--delay: 0.1s"
+              >
+                From a Personal Need to a Public Tool
+              </h2>
+              <div
+                class="text-lg text-gray-400 space-y-4 animate-on-scroll"
+                style="--delay: 0.2s"
+              >
+                <p>
+                  For about three years, I managed my finances in a Google
+                  Sheet. It was my trusted system because most budgeting apps
+                  missed key features, had ads, or raised privacy concerns.
+                </p>
+                <p>
+                  So, I started experimenting with AI tools to build my own
+                  solution. After about 20 days and dozens of iterations with
+                  Google's Gemini, Kaasi was born. It's the tool I always
+                  wanted: simple, powerful, completely private, and still
+                  improving. I built Kaasi for myself, but I hope it can help
+                  you manage your
+                  <span class="text-orange-500 font-semibold">කාසි</span>
+                  better, too.
+                </p>
+                <p class="font-semibold text-gray-300">- Aanjelo Salgado</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Donate Section -->
+          <section
+            id="donate"
+            class="py-24 md:py-32 border-t border-gray-800/60"
+          >
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+              <div class="animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                  Support Kaasi's Development
+                </h2>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto mb-10">
+                  Your donation helps keep Kaasi free and in active development.
+                  Since the AI subscriptions used for development are quite
+                  expensive, and I want to keep Kaasi free for everyone, your
+                  kind support is greatly appreciated!
+                </p>
+                <button id="donate-button" class="cta-button-large">
+                  Show Bank Details
+                </button>
+              </div>
+            </div>
+          </section>

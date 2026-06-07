@@ -177,7 +177,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("donate-modal");
     const openButton = document.getElementById("donate-button");
     const closeButton = document.getElementById("close-modal-button");
-    const copyButtons = document.querySelectorAll(".copy-button");
 
     if (!modal || !openButton || !closeButton) return;
 
@@ -193,8 +192,13 @@ document.addEventListener("DOMContentLoaded", () => {
         closeModal();
       }
     });
+  };
 
-    // Handle copy to clipboard functionality
+  /**
+   * Handles the copy to clipboard functionality across the site
+   */
+  const setupCopyButtons = () => {
+    const copyButtons = document.querySelectorAll(".copy-button");
     copyButtons.forEach((button) => {
       button.addEventListener("click", () => {
         const textToCopy = button.dataset.copyText;
@@ -207,10 +211,19 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
           document.execCommand("copy");
           // Visual feedback
-          button.textContent = "Copied!";
+          const originalIcon = button.innerHTML;
+          if (button.querySelector('i')) {
+              button.innerHTML = '<i class="fas fa-check"></i>';
+          } else {
+              button.textContent = "Copied!";
+          }
           button.classList.add("copied");
           setTimeout(() => {
-            button.textContent = "Copy";
+            if (button.querySelector('i')) {
+                button.innerHTML = originalIcon;
+            } else {
+                button.textContent = "Copy";
+            }
             button.classList.remove("copied");
           }, 2000);
         } catch (err) {
@@ -320,66 +333,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // --- BLOG POPULATION LOGIC ---
-  const runBlogLogic = () => {
-    // First, check if the blog data is available.
-    if (
-      typeof blogPosts === "undefined" ||
-      !Array.isArray(blogPosts) ||
-      blogPosts.length === 0
-    ) {
-      console.warn(
-        "Blog data is missing or empty. Cannot populate blog sections."
-      );
-      return;
-    }
+  /**
+   * Highlights the active navigation link based on scroll position.
+   */
+  const setupScrollSpy = () => {
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-link");
 
-    // Helper function to format dates
-    const formatBlogDate = (dateString) => {
-      const options = { year: "numeric", month: "long", day: "numeric" };
-      return new Date(dateString + "T00:00:00").toLocaleDateString(
-        "en-US",
-        options
-      );
-    };
+    if (sections.length === 0 || navLinks.length === 0) return;
 
-    // Helper function to create the HTML for a single post card
-    const createPostCard = (post) => {
-      return `
-                <a href="${post.url}" class="blog-card">
-                    <img src="${post.image}" alt="${
-        post.image_alt || "Blog post image"
-      }" class="blog-card-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/18181b/3f3f46?text=Image+Not+Found';">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <span class="blog-card-date">${formatBlogDate(
-                          post.date
-                        )}</span>
-                        <h3 class="blog-card-title">${post.title}</h3>
-                        <p class="blog-card-excerpt mt-auto">${post.excerpt}</p>
-                    </div>
-                </a>
-            `;
-    };
-
-    // Populate recent posts on the main page
-    const recentPostsContainer = document.getElementById(
-      "recent-posts-container"
+    const observer = new IntersectionObserver(
+      (entries) => {
+        let anyIntersecting = false;
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            anyIntersecting = true;
+            const id = entry.target.getAttribute("id");
+            navLinks.forEach((link) => {
+              link.classList.remove("active");
+              const href = link.getAttribute("href");
+              if (href === `/#${id}` || href === `#${id}`) {
+                link.classList.add("active");
+              }
+            });
+          }
+        });
+      },
+      { rootMargin: "-30% 0px -70% 0px" }
     );
-    if (recentPostsContainer) {
-      const recentPosts = blogPosts.slice(0, 3);
-      recentPostsContainer.innerHTML = recentPosts
-        .map((post, index) => createPostCard(post, index * 0.1))
-        .join("");
-    }
 
-    // Populate all posts on the blog page
-    const allPostsContainer = document.getElementById("all-posts-container");
-    if (allPostsContainer) {
-      allPostsContainer.innerHTML = blogPosts
-        .map((post, index) => createPostCard(post, (index % 3) * 0.1))
-        .join("");
-    }
+    sections.forEach((section) => observer.observe(section));
   };
+
+
 
   // --- INITIALIZE ALL SCRIPTS ---
   setupHeaderScroll();
@@ -388,8 +374,9 @@ document.addEventListener("DOMContentLoaded", () => {
   setupScrollAnimationFallback();
   initFlowFieldBackground();
   setupDonateModal();
+  setupCopyButtons();
   setupPrivacyModal();
   setupGoToTopButton();
   setupReadingProgressBar();
-  runBlogLogic();
+  setupScrollSpy();
 });
