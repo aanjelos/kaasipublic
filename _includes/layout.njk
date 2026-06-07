@@ -123,7 +123,8 @@
               class="h-6"
               onerror="this.onerror=null; this.src='https://placehold.co/24x24/1a1a1a/e67e26?text=K&font=satoshi';"
             />
-            <span class="text-gray-500 text-sm">&copy; 2025 Kaasi by Aanjelo Salgado.</span>
+            <span class="text-gray-500 text-sm">&copy; <span id="current-year"></span> Kaasi by Aanjelo Salgado.</span>
+            <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
           </div>
           <div class="flex items-center gap-6 text-gray-400">
             <a href="https://www.linkedin.com/company/kaasi-lk" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-linkedin-in text-xl"></i></a>
