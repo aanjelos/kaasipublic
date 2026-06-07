@@ -35,10 +35,11 @@ Using tools like **Kaasi**, you can:
 
 A fluctuating exchange rate is a reality of a floating currency system. By staying informed and tracking your expenses closely, you can navigate these economic shifts with a clear head.
 
-***
+## Sources & Further Reading
 
-### Citations and Further Reading
-*   **EconomyNext:** [Sri Lanka Rupee closes at 335.50/336.25 to US dollar; spot bond yields down](https://economynext.com/sri-lanka-rupee-closes-at-335-50-336-25-to-us-dollar-spot-bond-yields-down-274545/)
-*   **EconomyNext:** [Sri Lanka rupee is returning to its normal state: Deputy FinMin](https://economynext.com/sri-lanka-rupee-is-returning-to-its-normal-state-deputy-finmin-274572/)
-*   **The Island:** [Rupee weakens sharply against dollar as energy cost concerns resurface](https://island.lk/rupee-weakens-sharply-against-dollar-as-energy-cost-concerns-resurface/)
-*   **Reddit (r/srilanka):** [I'm trying to understand what's really happening...](https://www.reddit.com/r/srilanka/comments/1tb4t63/im_trying_to_understand_whats_really_happening/)
+For those who want to read more about the economic data and specific announcements, here are some useful links:
+
+*   [EconomyNext: Sri Lanka Rupee closes at 335.50/336.25 to US dollar; spot bond yields down](https://economynext.com/sri-lanka-rupee-closes-at-335-50-336-25-to-us-dollar-spot-bond-yields-down-274545/)
+*   [EconomyNext: Sri Lanka rupee is returning to its normal state: Deputy FinMin](https://economynext.com/sri-lanka-rupee-is-returning-to-its-normal-state-deputy-finmin-274572/)
+*   [The Island: Rupee weakens sharply against dollar as energy cost concerns resurface](https://island.lk/rupee-weakens-sharply-against-dollar-as-energy-cost-concerns-resurface/)
+*   [Reddit (r/srilanka): I'm trying to understand what's really happening...](https://www.reddit.com/r/srilanka/comments/1tb4t63/im_trying_to_understand_whats_really_happening/)
