@@ -317,8 +317,7 @@ body {
   text-align: center;
   background: rgba(255, 255, 255, 0.02);
   transition: background-color 0.3s ease, transform 0.3s ease;
-  width: 260px; /* Give cards a consistent width */
-  flex-shrink: 0;
+  width: 100%;
 }
 
 .next-feature-card:hover {
