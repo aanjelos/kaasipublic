@@ -1,7 +1,7 @@
 ---
 layout: post.njk
 title: "Why is the Dollar Rate Rising Again? Understanding the 2026 LKR Depreciation"
-date: 2026-06-08
+date: 2026-06-10
 author: "Aanjelo Salgado - With Gemini AI"
 image: "/blog/img/lkr-usd-2026.jpg"
 excerpt: "A factual look at why the Sri Lankan Rupee is depreciating against the US Dollar in mid-2026 and how tracking your expenses can help you navigate the rising cost of living."
