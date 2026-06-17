@@ -1,10 +1,10 @@
 ---
 layout: post.njk
-title: "Why Kaasi is Free (And How We Keep It That Way)"
+title: "Why Kaasi is Free (And How I Keep It That Way)"
 date: 2026-06-18
 author: "Aanjelo Salgado"
 image: "/blog/img/why-kaasi-is-free.jpg"
-excerpt: "No ads, no paywalls, and no hidden data harvesting. Discover the philosophy behind Kaasi, how it was built using AI, and how we keep operating costs at zero."
+excerpt: "No ads, no paywalls, and no hidden data harvesting. Discover the philosophy behind Kaasi, how it was built using AI, and how I keep operating costs at zero."
 tags: post
 ---
 
