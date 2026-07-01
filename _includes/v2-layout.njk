@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title | default("Kaasi - The Finance Engine for Serious Sri Lankans 🇱🇰") }}</title>
+
+    <!-- Meta Tags for SEO and Social Sharing -->
+    <meta name="description" content="{{ excerpt | default('Kaasi is a personal finance tool built for Sri Lankans who want total control over every rupee. Offline-first, with no ads and no compromises.') }}" />
+    <meta name="keywords" content="expense tracker, finance app, sri lanka, lkr, budget, money management, personal finance, kaasi" />
+    <meta name="author" content="Aanjelo Salgado" />
+
+    <meta property="og:title" content="{{ title | default('Kaasi - The Finance Engine for Serious Sri Lankans 🇱🇰') }}" />
+    <meta property="og:description" content="{{ excerpt | default('Kaasi is a personal finance tool built for Sri Lankans who want total control over every rupee. Offline-first, with no ads and no compromises.') }}" />
+    <meta property="og:image" content="https://kaasi.com.lk{{ image | default('/img/Metaimg.jpg') }}" />
+    <meta property="og:url" content="https://kaasi.com.lk{{ page.url }}" />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/img/LogoIcon.svg" type="image/svg+xml" />
+
+    <!-- Fonts -->
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <!-- Tailwind CSS (CDN for simplicity in V2 prototyping) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              satoshi: ['Satoshi', 'sans-serif'],
+            },
+            colors: {
+              kaasi: {
+                orange: '#e67e26',
+                bg: '#121212',
+                card: '#18181B'
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Custom V2 Styles -->
+    <link rel="stylesheet" href="/v2-style.css" />
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  </head>
+
+  <body class="bg-kaasi-bg text-gray-300 font-satoshi antialiased overflow-x-hidden selection:bg-kaasi-orange selection:text-white">
+    <!-- Fixed Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md bg-kaasi-bg/80 border-b border-gray-800/50">
+      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="/" class="flex items-center gap-2">
+          <img src="/img/FullLogo.svg" alt="Kaasi Logo" class="h-8" onerror="this.onerror=null; this.src='https://placehold.co/100x32/121212/e67e26?text=Kaasi&font=satoshi';" />
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="#features" class="text-gray-400 hover:text-white transition-colors">Features</a>
+          <a href="#matrix" class="text-gray-400 hover:text-white transition-colors">Compare</a>
+          <a href="/blog/" class="text-gray-400 hover:text-white transition-colors">Blog</a>
+        </nav>
+        <a href="https://app.kaasi.com.lk/" target="_blank" class="bg-kaasi-orange hover:bg-orange-600 text-white px-5 py-2 rounded-full font-bold text-sm transition-all shadow-[0_0_15px_rgba(230,126,38,0.3)] hover:shadow-[0_0_25px_rgba(230,126,38,0.5)] flex items-center gap-2">
+          <span>Launch App</span> <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-20">
+      {{ content | safe }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800/50 bg-kaasi-bg">
+      <div class="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-3">
+          <img src="/img/LogoIcon.svg" alt="Kaasi Logo Icon" class="h-6" />
+          <span class="text-gray-500 text-sm">&copy; <span id="v2-year"></span> Kaasi by Aanjelo Salgado.</span>
+        </div>
+        <div class="flex items-center gap-6 text-gray-400">
+          <a href="https://www.linkedin.com/company/kaasi-lk" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-linkedin-in text-lg"></i></a>
+          <a href="https://www.instagram.com/kaasi.com.lk/" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-instagram text-lg"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61576800639923" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-facebook-f text-lg"></i></a>
+        </div>
+        <div class="text-sm text-gray-500 font-medium">
+          Earn Well, and Spend Responsibly! 💸
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('v2-year').textContent = new Date().getFullYear();
+    </script>
+    <!-- Custom V2 Scripts -->
+    <script src="/v2-script.js"></script>
+  </body>
+</html>
