@@ -43,7 +43,7 @@ tags: post
               <blockquote class="border-l-4 border-orange-500 pl-4 italic">
                 "You can't manage what you don't measure." <br />
                 <span class="text-sm text-gray-500 not-italic"
-                  >— Peter Drucker (Management Consultant)</span
+                  >- Peter Drucker (Management Consultant)</span
                 >
               </blockquote>
 
