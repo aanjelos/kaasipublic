@@ -24,8 +24,34 @@
     <meta property="og:image" content="https://kaasi.com.lk{{ image | default('/img/Metaimg.jpg') }}" />
     <meta property="og:url" content="https://kaasi.com.lk{{ page.url }}" />
     <meta property="og:type" content="website" />
-
     <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kaasi.com.lk{{ page.url }}" />
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Kaasi",
+      "operatingSystem": "Web, PWA",
+      "applicationCategory": "FinanceApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "LKR"
+      },
+      "description": "Kaasi is a personal finance tool built for Sri Lankans. Track expenses, manage debts, and control budgets completely offline.",
+      "url": "https://kaasi.com.lk",
+      "featureList": [
+        "Offline-First",
+        "Double-Entry Accounting",
+        "Inline Math Engine",
+        "Data Export"
+      ]
+    }
+    </script>
     <meta
       name="twitter:title"
       content="{{ title | default('Kaasi - The Lankan Finance Manager 🇱🇰') }}"
