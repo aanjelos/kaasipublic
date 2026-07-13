@@ -481,34 +481,6 @@ h1, h2 {
   z-index: 0;
 }
 
-/* Toggle Switch */
-.toggle-switch {
-  width: 48px;
-  height: 24px;
-  background-color: #3f3f46;
-  border-radius: 9999px;
-  position: relative;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-.toggle-switch::after {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 20px;
-  height: 20px;
-  background-color: white;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-}
-.toggle-switch.active {
-  background-color: #22c55e;
-}
-.toggle-switch.active::after {
-  transform: translateX(24px);
-}
-
 /* Math Toolbar */
 .math-toolbar {
   position: absolute;

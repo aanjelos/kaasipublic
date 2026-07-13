@@ -543,33 +543,6 @@ const setupMathInput = () => {
   });
 };
 
-const setupPrivacyToggle = () => {
-  const toggle = document.getElementById("privacy-toggle");
-  const card = document.getElementById("privacy-card");
-  const centerIcon = document.getElementById("privacy-center-icon");
-  const topIcon = document.getElementById("privacy-icon");
-  const text = document.getElementById("privacy-text");
-
-  if (!toggle) return;
-
-  toggle.addEventListener("click", () => {
-    toggle.classList.toggle("active");
-    if (toggle.classList.contains("active")) {
-      card.style.backgroundColor = "";
-      card.style.borderColor = "";
-      centerIcon.className = "fas fa-lock text-5xl text-green-400/50 transition-all duration-500";
-      topIcon.className = "fas fa-user-shield bento-icon text-green-400 transition-colors duration-500";
-      text.innerText = "Your data never silently syncs anywhere. Kaasi works completely offline by default. Toggle this to see the difference.";
-    } else {
-      card.style.backgroundColor = "rgba(239, 68, 68, 0.1)"; 
-      card.style.borderColor = "rgba(239, 68, 68, 0.3)";
-      centerIcon.className = "fas fa-cloud-upload-alt text-5xl text-red-500/50 transition-all duration-500";
-      topIcon.className = "fas fa-exclamation-triangle bento-icon text-red-500 transition-colors duration-500";
-      text.innerText = "Typical apps sync your financial data to the cloud instantly, analyzing your habits and selling data to advertisers.";
-    }
-  });
-};
-
 document.addEventListener("DOMContentLoaded", () => {
   // --- INITIALIZE ALL SCRIPTS ---
   setupHeaderScroll();
@@ -584,5 +557,4 @@ document.addEventListener("DOMContentLoaded", () => {
   setupReadingProgressBar();
   setupScrollSpy();
   setupMathInput();
-  setupPrivacyToggle();
 });

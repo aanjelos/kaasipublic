@@ -70,41 +70,26 @@ excerpt: "Kaasi is a personal finance tool built for Sri Lankans who want total 
           <p class="bento-text">
             See every category, every month, broken down precisely. Not just a total, but a full picture of where your money actually went.
           </p>
-          <div class="mt-6 flex flex-col md:flex-row gap-6 p-6 rounded-xl border border-gray-800 bg-[#121212]/50">
-            <div class="relative w-32 h-32 flex-shrink-0 mx-auto">
-              <!-- CSS Pie Chart representation -->
-              <div class="absolute inset-0 rounded-full" style="background: conic-gradient(#e67e26 0% 40%, #3b82f6 40% 70%, #22c55e 70% 100%);"></div>
-              <div class="absolute inset-2 rounded-full bg-[#121212]"></div>
-            </div>
-            <div class="flex flex-col justify-center w-full space-y-3">
-              <div class="flex justify-between items-center text-sm">
-                <span class="text-orange-400"><i class="fas fa-circle text-xs mr-2"></i>Food & Dining</span>
-                <span class="text-white">LKR 45,000</span>
-              </div>
-              <div class="flex justify-between items-center text-sm">
-                <span class="text-blue-400"><i class="fas fa-circle text-xs mr-2"></i>Transportation</span>
-                <span class="text-white">LKR 12,500</span>
-              </div>
-              <div class="flex justify-between items-center text-sm">
-                <span class="text-green-400"><i class="fas fa-circle text-xs mr-2"></i>Groceries</span>
-                <span class="text-white">LKR 22,000</span>
-              </div>
-            </div>
-          </div>
+          <img
+            src="img/month.png"
+            onerror="this.onerror=null; this.src='https://placehold.co/800x400/18181b/3f3f46?text=Monthly+UI';"
+            alt="Monthly Breakdown UI"
+            class="bento-image-large"
+          />
         </div>
 
         <!-- Card 2: Privacy -->
-        <div class="bento-card animate-on-scroll" id="privacy-card" style="--delay: 0.1s; transition: background-color 0.5s ease;">
-          <div class="flex justify-between items-start mb-4">
-            <i class="fas fa-user-shield bento-icon text-green-400 transition-colors duration-500" id="privacy-icon"></i>
-            <div class="toggle-switch active" id="privacy-toggle" aria-label="Toggle Cloud Sync"></div>
-          </div>
-          <h3 class="bento-title" id="privacy-title">Offline-First Privacy</h3>
-          <p class="bento-text" id="privacy-text">
-            Your data never silently syncs anywhere. Kaasi works completely offline by default. Toggle this to see the difference.
+        <div class="bento-card animate-on-scroll" style="--delay: 0.1s">
+          <i class="fas fa-user-shield bento-icon text-green-400"></i>
+          <h3 class="bento-title">Offline-First Privacy</h3>
+          <p class="bento-text">
+            Your data never silently syncs anywhere. Kaasi works completely offline by default. No account required to get started.
+            <button id="open-privacy-policy" class="transition-colors underline font-medium hover:text-orange-500">
+              Read the privacy policy here.
+            </button>
           </p>
-          <div class="mt-4 flex justify-center items-center h-full bg-grid-pattern rounded-lg border border-gray-800/50">
-            <i class="fas fa-lock text-5xl text-green-400/50 transition-all duration-500" id="privacy-center-icon"></i>
+          <div class="mt-4 flex justify-center items-center h-full bg-grid-pattern rounded-lg">
+            <i class="fas fa-lock text-6xl text-green-400/50"></i>
           </div>
         </div>
       </div>
