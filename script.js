@@ -486,6 +486,7 @@ function handleMathToolbarInteraction(e) {
   if (op === "=") {
     const result = evaluateMathExpression(activeCalcInput.value);
     if (result !== null) {
+      if (typeof gtag === 'function') gtag('event', 'math_eval', { event_category: 'engagement', event_label: 'Math Result Success' });
       activeCalcInput.value = result;
       activeCalcInput.style.borderColor = "#22c55e";
       setTimeout(() => { activeCalcInput.style.borderColor = ""; }, 500);
@@ -525,6 +526,7 @@ const setupMathInput = () => {
       e.preventDefault();
       const result = evaluateMathExpression(input.value);
       if (result !== null) {
+        if (typeof gtag === 'function') gtag('event', 'math_eval', { event_category: 'engagement', event_label: 'Math Result Success (Keyboard)' });
         input.value = result;
         input.style.borderColor = "#22c55e";
         setTimeout(() => { input.style.borderColor = ""; }, 500);
@@ -557,4 +559,30 @@ document.addEventListener("DOMContentLoaded", () => {
   setupReadingProgressBar();
   setupScrollSpy();
   setupMathInput();
+  setupAnalytics();
 });
+
+function setupAnalytics() {
+  if (typeof gtag !== 'function') return;
+
+  const ctaButtons = document.querySelectorAll('.cta-button, .cta-button-large');
+  ctaButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      gtag('event', 'click_cta', { event_category: 'engagement', event_label: btn.innerText || 'Start Using Kaasi' });
+    });
+  });
+
+  const privacyBtn = document.getElementById("open-privacy-policy");
+  if (privacyBtn) {
+    privacyBtn.addEventListener("click", () => {
+      gtag('event', 'open_privacy', { event_category: 'engagement', event_label: 'Privacy Policy Modal' });
+    });
+  }
+
+  const navLinks = document.querySelectorAll('.nav-link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      gtag('event', 'click_nav', { event_category: 'navigation', event_label: link.innerText });
+    });
+  });
+}
