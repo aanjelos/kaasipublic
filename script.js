@@ -568,7 +568,19 @@ function setupAnalytics() {
   const ctaButtons = document.querySelectorAll('.cta-button, .cta-button-large');
   ctaButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      gtag('event', 'click_cta', { event_category: 'engagement', event_label: btn.innerText || 'Start Using Kaasi' });
+      let location = "Unknown";
+      const container = btn.closest('header, section, .prose, footer');
+      if (container) {
+        if (container.tagName.toLowerCase() === 'header') location = "Header";
+        else if (container.tagName.toLowerCase() === 'footer') location = "Footer";
+        else if (container.classList.contains('prose')) location = "Blog Post";
+        else location = container.id ? `Section: ${container.id}` : "Page Body";
+      }
+
+      gtag('event', 'click_cta', { 
+        event_category: 'engagement', 
+        event_label: `${btn.innerText.trim() || 'CTA'} - [${location}]` 
+      });
     });
   });
 
