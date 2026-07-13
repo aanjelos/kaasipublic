@@ -18,7 +18,7 @@ excerpt: "Kaasi is a personal finance tool built for Sri Lankans who want total 
         The Finance Engine for<br/>Serious Sri Lankans 🇱🇰
       </h1>
       <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10">
-        Kaasi is a personal finance tool built for Sri Lankans who want total control over every rupee. Track complex expenses, manage debts, credit cards, and installments. Offline-first, with no ads and no compromises.
+        Simple trackers are great for getting started. Kaasi is for when you need complete control. Track complex expenses, manage debts, credit cards, and installments with a fully offline, zero-ads power tool.
       </p>
       <div class="flex items-center justify-center gap-4">
         <a href="https://app.kaasi.com.lk/" target="_blank" class="cta-button-large">
@@ -70,26 +70,41 @@ excerpt: "Kaasi is a personal finance tool built for Sri Lankans who want total 
           <p class="bento-text">
             See every category, every month, broken down precisely. Not just a total, but a full picture of where your money actually went.
           </p>
-          <img
-            src="img/month.png"
-            onerror="this.onerror=null; this.src='https://placehold.co/800x400/18181b/3f3f46?text=Monthly+UI';"
-            alt="Monthly Breakdown UI"
-            class="bento-image-large"
-          />
+          <div class="mt-6 flex flex-col md:flex-row gap-6 p-6 rounded-xl border border-gray-800 bg-[#121212]/50">
+            <div class="relative w-32 h-32 flex-shrink-0 mx-auto">
+              <!-- CSS Pie Chart representation -->
+              <div class="absolute inset-0 rounded-full" style="background: conic-gradient(#e67e26 0% 40%, #3b82f6 40% 70%, #22c55e 70% 100%);"></div>
+              <div class="absolute inset-2 rounded-full bg-[#121212]"></div>
+            </div>
+            <div class="flex flex-col justify-center w-full space-y-3">
+              <div class="flex justify-between items-center text-sm">
+                <span class="text-orange-400"><i class="fas fa-circle text-xs mr-2"></i>Food & Dining</span>
+                <span class="text-white">LKR 45,000</span>
+              </div>
+              <div class="flex justify-between items-center text-sm">
+                <span class="text-blue-400"><i class="fas fa-circle text-xs mr-2"></i>Transportation</span>
+                <span class="text-white">LKR 12,500</span>
+              </div>
+              <div class="flex justify-between items-center text-sm">
+                <span class="text-green-400"><i class="fas fa-circle text-xs mr-2"></i>Groceries</span>
+                <span class="text-white">LKR 22,000</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Card 2: Privacy -->
-        <div class="bento-card animate-on-scroll" style="--delay: 0.1s">
-          <i class="fas fa-user-shield bento-icon text-green-400"></i>
-          <h3 class="bento-title">Offline-First Privacy</h3>
-          <p class="bento-text">
-            Your data never silently syncs anywhere. Kaasi works completely offline by default. No account required to get started.
-            <button id="open-privacy-policy" class="transition-colors underline font-medium hover:text-orange-500">
-              Read the privacy policy here.
-            </button>
+        <div class="bento-card animate-on-scroll" id="privacy-card" style="--delay: 0.1s; transition: background-color 0.5s ease;">
+          <div class="flex justify-between items-start mb-4">
+            <i class="fas fa-user-shield bento-icon text-green-400 transition-colors duration-500" id="privacy-icon"></i>
+            <div class="toggle-switch active" id="privacy-toggle" aria-label="Toggle Cloud Sync"></div>
+          </div>
+          <h3 class="bento-title" id="privacy-title">Offline-First Privacy</h3>
+          <p class="bento-text" id="privacy-text">
+            Your data never silently syncs anywhere. Kaasi works completely offline by default. Toggle this to see the difference.
           </p>
-          <div class="mt-4 flex justify-center items-center h-full bg-grid-pattern rounded-lg">
-            <i class="fas fa-lock text-6xl text-green-400/50"></i>
+          <div class="mt-4 flex justify-center items-center h-full bg-grid-pattern rounded-lg border border-gray-800/50">
+            <i class="fas fa-lock text-5xl text-green-400/50 transition-all duration-500" id="privacy-center-icon"></i>
           </div>
         </div>
       </div>
@@ -106,12 +121,18 @@ excerpt: "Kaasi is a personal finance tool built for Sri Lankans who want total 
         </div>
 
         <!-- Card 4: Inline Math Engine -->
-        <div class="bento-card animate-on-scroll" style="--delay: 0.2s">
+        <div class="bento-card animate-on-scroll" style="--delay: 0.2s; overflow: visible;">
           <i class="fas fa-calculator bento-icon text-orange-400"></i>
           <h3 class="bento-title">Inline Math Engine</h3>
-          <p class="bento-text">
-            Type <span class="font-mono text-orange-400 bg-gray-800 px-1.5 py-0.5 rounded">(3500*4)+1200</span> directly into an amount field and Kaasi calculates it instantly. No switching to a calculator app.
+          <p class="bento-text mb-4">
+            No switching to a calculator app. Type expressions directly into amount fields. Try it below:
           </p>
+          <div class="relative w-full">
+            <input type="text" id="demo-math-input" class="w-full bg-[#121212] border border-gray-700 rounded-lg py-3 px-4 text-white font-mono focus:outline-none focus:border-orange-500 transition-colors pr-12" value="(1500*2)+350" autocomplete="off" />
+            <button type="button" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-orange-500 transition-colors focus:outline-none" aria-label="Toggle Calculator">
+              <i class="fas fa-calculator"></i>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -361,6 +382,67 @@ excerpt: "Kaasi is a personal finance tool built for Sri Lankans who want total 
         <h3>Recent Activity Feed</h3>
         <p class="text-sm">A dedicated dashboard tab to quickly audit your latest actions.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing Section -->
+<section id="pricing" class="py-24 md:py-32">
+  <div class="container mx-auto px-6 max-w-4xl text-center">
+    <div class="mb-16 animate-on-scroll">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+        Premium Features. Zero Cost.
+      </h2>
+      <p class="text-lg text-gray-400">
+        Kaasi is built as a public utility. Everything you'd normally pay for in other apps is completely free here.
+      </p>
+    </div>
+    
+    <div class="pricing-card mx-auto animate-on-scroll" style="--delay: 0.1s">
+      <h3 class="text-3xl font-bold text-white mb-2">Free Forever</h3>
+      <div class="flex items-end justify-center gap-1 mb-8">
+        <span class="text-5xl font-bold text-orange-400">LKR 0</span>
+        <span class="text-gray-400 mb-1">/mo</span>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left max-w-2xl mx-auto mb-10">
+        <div class="flex items-center gap-3">
+          <i class="fas fa-check-circle text-green-400"></i>
+          <span class="text-gray-300">Unlimited Transactions</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <i class="fas fa-check-circle text-green-400"></i>
+          <span class="text-gray-300">Offline PWA Installation</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <i class="fas fa-check-circle text-green-400"></i>
+          <span class="text-gray-300">Multi-Account & Debt Tracking</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <i class="fas fa-check-circle text-green-400"></i>
+          <span class="text-gray-300">Secure Cloud Backups</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <i class="fas fa-check-circle text-green-400"></i>
+          <span class="text-gray-300">Advanced Category Budgets</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <i class="fas fa-check-circle text-green-400"></i>
+          <span class="text-gray-300">PDF Report Generation</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <i class="fas fa-check-circle text-green-400"></i>
+          <span class="text-gray-300">Full JSON Data Export</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <i class="fas fa-check-circle text-green-400"></i>
+          <span class="text-gray-300">Zero Advertisements</span>
+        </div>
+      </div>
+      
+      <a href="https://app.kaasi.com.lk/" target="_blank" class="cta-button-large w-full max-w-sm">
+        Start Using Kaasi
+      </a>
     </div>
   </div>
 </section>

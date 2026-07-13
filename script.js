@@ -380,6 +380,196 @@ const setupScrollSpy = () => {
   sections.forEach((section) => observer.observe(section));
 };
 
+/* --- Interactive Bento Logic --- */
+
+// Math Parser
+function evaluateMathExpression(inputStr) {
+  let expr = inputStr.trim();
+  expr = expr.replace(/,/g, '');
+  if (expr.endsWith("=")) expr = expr.slice(0, -1);
+  expr = expr.replace(/×/g, "*").replace(/÷/g, "/");
+
+  if (!/^[\d\.\+\-\*\/\(\)\s]+$/.test(expr)) return null;
+  if (!/[\+\-\*\/]/.test(expr)) return null;
+
+  try {
+    const tokens = expr.match(/([0-9\.]+)|([\+\-\*\/\(\)])/g);
+    if (!tokens) return null;
+    
+    let pos = 0;
+    function parseExpression() {
+      let value = parseTerm();
+      while (pos < tokens.length && (tokens[pos] === '+' || tokens[pos] === '-')) {
+        let op = tokens[pos++];
+        let nextTerm = parseTerm();
+        value = op === '+' ? value + nextTerm : value - nextTerm;
+      }
+      return value;
+    }
+    function parseTerm() {
+      let value = parseFactor();
+      while (pos < tokens.length && (tokens[pos] === '*' || tokens[pos] === '/')) {
+        let op = tokens[pos++];
+        let nextFactor = parseFactor();
+        value = op === '*' ? value * nextFactor : value / nextFactor;
+      }
+      return value;
+    }
+    function parseFactor() {
+      if (pos >= tokens.length) throw new Error("Unexpected end");
+      let token = tokens[pos++];
+      if (token === '(') {
+        let value = parseExpression();
+        if (pos >= tokens.length || tokens[pos++] !== ')') throw new Error("Missing )");
+        return value;
+      }
+      if (token === '-') return -parseFactor();
+      if (token === '+') return parseFactor();
+      return parseFloat(token);
+    }
+    
+    const result = parseExpression();
+    if (typeof result === 'number' && !isNaN(result) && isFinite(result)) {
+      return parseFloat(result.toFixed(2));
+    }
+  } catch (e) {
+    return null;
+  }
+  return null;
+}
+
+// Math Toolbar Setup
+const mathToolbar = document.createElement("div");
+mathToolbar.className = "math-toolbar";
+mathToolbar.innerHTML = `
+  <div class="math-btn" data-op="+">+</div>
+  <div class="math-btn" data-op="-">-</div>
+  <div class="math-btn" data-op="*">×</div>
+  <div class="math-btn" data-op="/">÷</div>
+  <div class="math-btn math-btn-equal" data-op="=">=</div>
+`;
+document.body.appendChild(mathToolbar);
+
+let activeCalcInput = null;
+
+function positionMathToolbar(inputEl) {
+  const parent = inputEl.parentElement;
+  if (!parent.classList.contains("relative")) {
+    parent.classList.add("relative");
+  }
+  if (!parent.contains(mathToolbar)) {
+    parent.appendChild(mathToolbar);
+  }
+  mathToolbar.style.left = 'auto';
+  mathToolbar.style.right = '0';
+  mathToolbar.style.top = '100%';
+  mathToolbar.style.marginTop = '4px';
+}
+
+function showMathToolbar(inputEl) {
+  activeCalcInput = inputEl;
+  positionMathToolbar(inputEl);
+  mathToolbar.classList.add("visible");
+}
+
+function hideMathToolbar() {
+  mathToolbar.classList.remove("visible");
+  activeCalcInput = null;
+}
+
+function handleMathToolbarInteraction(e) {
+  e.preventDefault();
+  const btn = e.target.closest(".math-btn");
+  if (!btn || !activeCalcInput) return;
+
+  const op = btn.dataset.op;
+  if (op === "=") {
+    const result = evaluateMathExpression(activeCalcInput.value);
+    if (result !== null) {
+      activeCalcInput.value = result;
+      activeCalcInput.style.borderColor = "#22c55e";
+      setTimeout(() => { activeCalcInput.style.borderColor = ""; }, 500);
+    } else {
+      activeCalcInput.style.borderColor = "#ef4444";
+      setTimeout(() => { activeCalcInput.style.borderColor = ""; }, 500);
+    }
+    hideMathToolbar();
+  } else {
+    activeCalcInput.value += op;
+  }
+  activeCalcInput.focus();
+}
+
+mathToolbar.addEventListener("mousedown", handleMathToolbarInteraction);
+
+const setupMathInput = () => {
+  const input = document.getElementById("demo-math-input");
+  const toggleBtn = document.querySelector("#demo-math-input + button");
+  if (!input || !toggleBtn) return;
+
+  toggleBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (mathToolbar.classList.contains("visible")) {
+      hideMathToolbar();
+    } else {
+      showMathToolbar(input);
+    }
+  });
+
+  input.addEventListener("focus", () => {
+    showMathToolbar(input);
+  });
+
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      const result = evaluateMathExpression(input.value);
+      if (result !== null) {
+        input.value = result;
+        input.style.borderColor = "#22c55e";
+        setTimeout(() => { input.style.borderColor = ""; }, 500);
+      } else {
+        input.style.borderColor = "#ef4444";
+        setTimeout(() => { input.style.borderColor = ""; }, 500);
+      }
+      hideMathToolbar();
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!mathToolbar.contains(e.target) && e.target !== input && e.target !== toggleBtn && !toggleBtn.contains(e.target)) {
+      hideMathToolbar();
+    }
+  });
+};
+
+const setupPrivacyToggle = () => {
+  const toggle = document.getElementById("privacy-toggle");
+  const card = document.getElementById("privacy-card");
+  const centerIcon = document.getElementById("privacy-center-icon");
+  const topIcon = document.getElementById("privacy-icon");
+  const text = document.getElementById("privacy-text");
+
+  if (!toggle) return;
+
+  toggle.addEventListener("click", () => {
+    toggle.classList.toggle("active");
+    if (toggle.classList.contains("active")) {
+      card.style.backgroundColor = "";
+      card.style.borderColor = "";
+      centerIcon.className = "fas fa-lock text-5xl text-green-400/50 transition-all duration-500";
+      topIcon.className = "fas fa-user-shield bento-icon text-green-400 transition-colors duration-500";
+      text.innerText = "Your data never silently syncs anywhere. Kaasi works completely offline by default. Toggle this to see the difference.";
+    } else {
+      card.style.backgroundColor = "rgba(239, 68, 68, 0.1)"; 
+      card.style.borderColor = "rgba(239, 68, 68, 0.3)";
+      centerIcon.className = "fas fa-cloud-upload-alt text-5xl text-red-500/50 transition-all duration-500";
+      topIcon.className = "fas fa-exclamation-triangle bento-icon text-red-500 transition-colors duration-500";
+      text.innerText = "Typical apps sync your financial data to the cloud instantly, analyzing your habits and selling data to advertisers.";
+    }
+  });
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   // --- INITIALIZE ALL SCRIPTS ---
   setupHeaderScroll();
@@ -393,4 +583,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupGoToTopButton();
   setupReadingProgressBar();
   setupScrollSpy();
+  setupMathInput();
+  setupPrivacyToggle();
 });
