@@ -535,6 +535,35 @@ h1, h2 {
 
 
 
+/* --- Infinite Scrolling Marquee --- */
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  flex-wrap: nowrap;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused !important;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 0.75rem)); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(calc(-50% - 0.75rem)); }
+  100% { transform: translateX(0); }
+}
+
 
 /* --- Custom Scrollbar --- */
 ::-webkit-scrollbar {
