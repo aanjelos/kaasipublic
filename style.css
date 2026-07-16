@@ -550,7 +550,9 @@ h1, h2 {
   flex-wrap: nowrap;
 }
 
-.marquee-track:hover {
+.marquee-track:hover,
+.marquee-track:active,
+.marquee-track:focus-within {
   animation-play-state: paused !important;
 }
 
