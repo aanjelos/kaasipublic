@@ -231,7 +231,7 @@ h1, h2 {
     animation-play-state: running;
     animation-timeline: view();
     animation-range-start: entry 10%;
-    animation-range-end: cover 35%;
+    animation-range-end: entry 100%;
   }
 }
 
