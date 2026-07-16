@@ -556,6 +556,11 @@ h1, h2 {
   animation-play-state: paused !important;
 }
 
+.marquee-track .next-feature-card {
+  width: 280px;
+  flex-shrink: 0;
+}
+
 @keyframes scroll-left {
   0% { transform: translateX(0); }
   100% { transform: translateX(calc(-50% - 0.75rem)); }
