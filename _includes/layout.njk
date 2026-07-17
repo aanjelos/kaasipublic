@@ -24,8 +24,34 @@
     <meta property="og:image" content="https://kaasi.com.lk{{ image | default('/img/Metaimg.jpg') }}" />
     <meta property="og:url" content="https://kaasi.com.lk{{ page.url }}" />
     <meta property="og:type" content="website" />
-
     <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kaasi.com.lk{{ page.url }}" />
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Kaasi",
+      "operatingSystem": "Web, PWA",
+      "applicationCategory": "FinanceApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "LKR"
+      },
+      "description": "Kaasi is a personal finance tool built for Sri Lankans. Track expenses, manage debts, and control budgets completely offline.",
+      "url": "https://kaasi.com.lk",
+      "featureList": [
+        "Offline-First",
+        "Double-Entry Accounting",
+        "Built-in Calculator",
+        "Data Export"
+      ]
+    }
+    </script>
     <meta
       name="twitter:title"
       content="{{ title | default('Kaasi - The Lankan Finance Manager 🇱🇰') }}"
@@ -44,6 +70,9 @@
       href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -65,7 +94,7 @@
   </head>
 
   <body class="bg-[#121212] text-gray-300 font-satoshi antialiased">
-    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full z-0"></canvas>
+    <canvas id="bg-canvas" class="fixed inset-0 w-full z-0"></canvas>
     <div class="aurora-overlay"></div>
 
     <div id="page-container" class="relative z-10 flex flex-col min-h-screen">
@@ -83,10 +112,11 @@
             />
           </a>
           <nav class="hidden md:flex items-center gap-8">
-            <a href="/#features" class="nav-link {% if page.url == '/#features' %}active{% endif %}">Features</a>
-            <a href="/#whats-next" class="nav-link {% if page.url == '/#whats-next' %}active{% endif %}">What's Next</a>
+            <a href="/#features" class="nav-link">Features</a>
+            <a href="/#whats-next" class="nav-link">What's Next</a>
+            <a href="/#pricing" class="nav-link">Pricing</a>
             <a href="/blog/" class="nav-link {% if '/blog/' in page.url %}active{% endif %}">Blog</a>
-            <a href="/#story" class="nav-link {% if page.url == '/#story' %}active{% endif %}">The Story</a>
+            <a href="/#story" class="nav-link">The Story</a>
           </nav>
           <a
             href="https://app.kaasi.com.lk/"

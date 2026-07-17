@@ -13,6 +13,7 @@
 /* --- Base Styles --- */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -25,14 +26,22 @@ body {
     grid-template-rows: 1fr auto;
 }
 
+h1, h2 {
+  font-family: "Instrument Serif", serif;
+  font-weight: normal !important;
+}
+
 #page-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-width: 0;
+  overflow-x: hidden;
 }
 
 #content-wrapper {
   flex-grow: 1;
+  min-width: 0;
 }
 
 /* --- Animated Background & Aurora Overlay --- */
@@ -42,10 +51,7 @@ body {
 
 .aurora-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   z-index: 1;
   pointer-events: none;
   background: radial-gradient(
@@ -225,13 +231,13 @@ body {
     animation-play-state: running;
     animation-timeline: view();
     animation-range-start: entry 10%;
-    animation-range-end: cover 35%;
+    animation-range-end: entry 100%;
   }
 }
 
 /* --- Bento Grid Features (FINAL FIX) --- */
 .bento-card {
-  background: var(--card-bg);
+  background: rgba(24, 24, 27, 0.4);
   border: 1px solid var(--border-dark);
   border-radius: 1.5rem; /* 24px */
   padding: 2rem; /* 32px */
@@ -240,7 +246,8 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(24px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05), 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .bento-card::before {
@@ -339,7 +346,7 @@ body {
 
 /* --- Blog Card --- */
 .blog-card {
-  background: var(--card-bg);
+  background: rgba(24, 24, 27, 0.4);
   border: 1px solid var(--border-dark);
   border-radius: 1rem;
   overflow: hidden;
@@ -347,6 +354,8 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  backdrop-filter: blur(24px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05), 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .blog-card:hover {
@@ -458,6 +467,111 @@ body {
 .copy-button.copied {
   background-color: #22c55e; /* green-500 */
 }
+
+/* --- Utilities & Interactives --- */
+.bg-noise {
+  position: relative;
+}
+.bg-noise::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Math Toolbar */
+.math-toolbar {
+  position: absolute;
+  display: flex;
+  gap: 0.25rem;
+  background: #18181b;
+  border: 1px solid #3f3f46;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  z-index: 9999;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+}
+
+.math-toolbar.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.math-btn {
+  background: #27272a;
+  color: #e4e4e7;
+  border: 1px solid #3f3f46;
+  border-radius: 0.375rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+}
+
+.math-btn:hover {
+  background: #3f3f46;
+}
+
+.math-btn-equal {
+  background: var(--brand-orange);
+  color: white;
+  border-color: var(--brand-orange);
+}
+.math-btn-equal:hover {
+  background: var(--brand-orange-dark);
+}
+
+
+
+/* --- Infinite Scrolling Marquee --- */
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  flex-wrap: nowrap;
+}
+
+.marquee-track:hover,
+.marquee-track:active,
+.marquee-track:focus-within {
+  animation-play-state: paused !important;
+}
+
+.marquee-track .next-feature-card {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 0.75rem)); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(calc(-50% - 0.75rem)); }
+  100% { transform: translateX(0); }
+}
+
 
 /* --- Custom Scrollbar --- */
 ::-webkit-scrollbar {
