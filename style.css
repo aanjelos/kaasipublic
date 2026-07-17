@@ -465,7 +465,8 @@ h1, h2 {
   transform: scale(1);
 }
 .copy-button.copied {
-  background-color: #27AE60; /* Kaasi brand green */
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* --- Utilities & Interactives --- */

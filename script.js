@@ -220,26 +220,13 @@ const setupCopyButtons = () => {
       try {
         await navigator.clipboard.writeText(textToCopy);
         
-        // Visual feedback without innerHTML
-        const iconElement = button.querySelector('i');
-        let originalClasses = "";
-        const originalText = button.textContent;
+        const originalHTML = button.innerHTML;
         
-        if (iconElement) {
-            originalClasses = iconElement.className;
-            iconElement.className = "fas fa-check";
-        } else {
-            button.textContent = "Copied!";
-        }
-        
+        button.textContent = "Copied!";
         button.classList.add("copied");
         
         setTimeout(() => {
-          if (iconElement) {
-              iconElement.className = originalClasses;
-          } else {
-              button.textContent = originalText;
-          }
+          button.innerHTML = originalHTML;
           button.classList.remove("copied");
         }, 2000);
       } catch (err) {
