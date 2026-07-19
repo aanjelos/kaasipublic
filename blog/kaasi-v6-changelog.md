@@ -119,8 +119,6 @@ Kaasi can now be installed directly to your phone or computer just like a native
 *   **Timezone Accuracy:** Fixed a legacy issue where date inputs defaulted to UTC time, ensuring all new entries now accurately lock to your local timezone.
 *   **Updated Help Info:** The Settings info pane has been updated to accurately explain the new backup interval systems and cloud features.
 
----
-
 Kaasi V6 is rolling out today. Launch the app, save it to your home screen, and master your financial flow.
 
 As always, Kaasi is completely free and private. Voluntary donations to support the development process and AI subscriptions are always welcome, and details can be found on our home page.
