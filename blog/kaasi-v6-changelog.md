@@ -14,17 +14,13 @@ This update represents a complete upgrade of the system's core capabilities. Rat
 
 ## 💰 Category Budgets & Organization
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center my-12">
-  <div class="md:col-span-2">
-    <ul>
-      <li><strong>Smart Category Budgets:</strong> Create customizable monthly spending limits and group multiple categories into a single budget.</li>
-      <li><strong>Visual Progress Tracking:</strong> A sleek new Dashboard Card tracks your monthly spending against your targets using 3-state progress bars (Green, Orange, Red).</li>
-      <li><strong>Flexible Sorting & Rules:</strong> Sort budgets dynamically with smooth animations. You can also hide specific categories globally from charts, PDF reports, or dashboard totals via the new "Hidden Category Rules" panel.</li>
-    </ul>
-  </div>
-  <div class="flex justify-center">
-    <img src="/blog/img/kaasi-v6-budgets.jpg" alt="The new Category Budgets card showing dynamic progress indicators" class="w-full max-w-[280px] h-auto rounded-lg border border-gray-800" />
-  </div>
+*   **Smart Category Budgets:** Create customizable monthly spending limits and group multiple categories into a single budget.
+*   **Visual Progress Tracking:** A sleek new Dashboard Card tracks your monthly spending against your targets using 3-state progress bars (Green, Orange, Red). 
+*   **Flexible Sorting & Rules:** Sort budgets dynamically with smooth animations. You can also hide specific categories globally from charts, PDF reports, or dashboard totals via the new "Hidden Category Rules" panel.
+
+<div class="my-12 text-center">
+  <img src="/blog/img/kaasi-v6-budgets.jpg" alt="The new Category Budgets card showing dynamic progress indicators" class="w-full h-auto rounded-lg border border-gray-800" />
+  <p class="text-sm text-gray-500 mt-2">Visual category budgets help you see exactly how close you are to your limits.</p>
 </div>
 
 ## 💳 Credit Cards
