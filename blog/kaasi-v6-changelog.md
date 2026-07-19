@@ -14,13 +14,17 @@ This update represents a complete upgrade of the system's core capabilities. Rat
 
 ## 💰 Category Budgets & Organization
 
-*   **Smart Category Budgets:** Create customizable monthly spending limits and group multiple categories into a single budget.
-*   **Visual Progress Tracking:** A sleek new Dashboard Card tracks your monthly spending against your targets using 3-state progress bars (Green, Orange, Red). 
-*   **Flexible Sorting & Rules:** Sort budgets dynamically with smooth animations. You can also hide specific categories globally from charts, PDF reports, or dashboard totals via the new "Hidden Category Rules" panel.
-
-<div class="my-12 text-center">
-  <img src="/blog/img/kaasi-v6-budgets.jpg" alt="The new Category Budgets card showing dynamic progress indicators" class="w-full h-auto rounded-lg border border-gray-800" />
-  <p class="text-sm text-gray-500 mt-2">Visual category budgets help you see exactly how close you are to your limits.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center my-12">
+  <div class="md:col-span-2">
+    <ul>
+      <li><strong>Smart Category Budgets:</strong> Create customizable monthly spending limits and group multiple categories into a single budget.</li>
+      <li><strong>Visual Progress Tracking:</strong> A sleek new Dashboard Card tracks your monthly spending against your targets using 3-state progress bars (Green, Orange, Red).</li>
+      <li><strong>Flexible Sorting & Rules:</strong> Sort budgets dynamically with smooth animations. You can also hide specific categories globally from charts, PDF reports, or dashboard totals via the new "Hidden Category Rules" panel.</li>
+    </ul>
+  </div>
+  <div class="flex justify-center">
+    <img src="/blog/img/kaasi-v6-budgets.jpg" alt="The new Category Budgets card showing dynamic progress indicators" class="w-full max-w-[280px] h-auto rounded-lg border border-gray-800" />
+  </div>
 </div>
 
 ## 💳 Credit Cards
@@ -45,14 +49,18 @@ Kaasi can now be installed directly to your phone or computer just like a native
 
 ## 🔒 Security & Privacy
 
-*   **App PIN Lock:** Secure your financial data with a new 4-digit PIN lock screen that features auto-lock on inactivity. The app's interface is completely hidden until unlocked, preventing anyone from snooping.
-*   **Secure PIN Recovery:** Forgot your PIN? You can now use a secure recovery code mechanism (contact me to get yours) to safely regain access without losing data.
-*   **Privacy-First Analytics:** We now track basic app usage to see which features are popular, without ever collecting any of your personal or financial data.
-*   **Console Privacy:** We removed the full state data dump from the developer console on load, ensuring your entire financial state isn't visible to shoulder-surfers if the dev tools are opened.
-
-<div class="my-12 text-center">
-  <img src="/blog/img/kaasi-v6-pin-lock.jpg" alt="A screenshot of the new PIN Lock security screen" class="w-full h-auto rounded-lg border border-gray-800" />
-  <p class="text-sm text-gray-500 mt-2">Activate the numeric PIN Lock to keep your financial logs private.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center my-12">
+  <div class="md:col-span-2">
+    <ul>
+      <li><strong>App PIN Lock:</strong> Secure your financial data with a new 4-digit PIN lock screen that features auto-lock on inactivity. The app's interface is completely hidden until unlocked, preventing anyone from snooping.</li>
+      <li><strong>Secure PIN Recovery:</strong> Forgot your PIN? You can now use a secure recovery code mechanism (contact me to get yours) to safely regain access without losing data.</li>
+      <li><strong>Privacy-First Analytics:</strong> We now track basic app usage to see which features are popular, without ever collecting any of your personal or financial data.</li>
+      <li><strong>Console Privacy:</strong> We removed the full state data dump from the developer console on load, ensuring your entire financial state isn't visible to shoulder-surfers if the dev tools are opened.</li>
+    </ul>
+  </div>
+  <div class="flex justify-center">
+    <img src="/blog/img/kaasi-v6-pin-lock.jpg" alt="A screenshot of the new PIN Lock security screen" class="w-full max-w-[200px] h-auto rounded-lg border border-gray-800" />
+  </div>
 </div>
 
 ## ☁️ Cloud Sync & Backups
