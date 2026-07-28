@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kaasi.com.lk/sitemap.xml
+Sitemap: https://www.kaasi.com.lk/sitemap.xml
