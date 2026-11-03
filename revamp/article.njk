@@ -1,0 +1,13 @@
+---
+layout: base.njk
+pagination:
+  data: posts
+  size: 1
+  alias: post
+permalink: "{{ post.url }}"
+eleventyComputed:
+  title: "{{ post.title }} — Kaasi"
+  excerpt: "{{ post.excerpt }}"
+  image: "{{ post.image }}"
+---
+<article class="reading container"><header><a href="/blog/">Back to the Blog Wallet</a><h1>{{ post.title }}</h1><p class="deck">{{ post.excerpt }}</p><div class="article-meta"><span>{{ post.author }}</span><time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time><span>{{ post.minutes }} min read</span></div></header><img class="cover" src="{{ post.image }}" alt="{{ post.title }}" width="1200" height="675" fetchpriority="high"><div class="reading-grid"><aside><nav aria-label="Article sections">{% for h in post.headings %}{% if h.level == '2' %}<a href="#{{ h.id }}">{{ h.title }}</a>{% endif %}{% endfor %}</nav></aside><div class="prose">{{ post.html | safe }}</div></div><div class="article-end"><a href="/blog/">More from the Blog Wallet</a><a href="https://app.kaasi.com.lk/">Try Kaasi</a></div></article><section class="container related"><h2>Keep reading.</h2><div class="article-grid">{% for related in posts | related(post.slug) %}<article><a href="{{ related.url }}"><img src="{{ related.image }}" alt="" loading="lazy" width="720" height="450"><h3>{{ related.title }}</h3></a></article>{% endfor %}</div></section>

@@ -1,0 +1,57 @@
+[
+  {
+    "date": "2026-11-03",
+    "shape": "Product stage",
+    "theme": "brand",
+    "genre": "editorial",
+    "hero": "Stage by user reference",
+    "nav": "quiet masthead",
+    "footer": "existing",
+    "signature": "Real beta screens and zoomable image overlay",
+    "imagery": "Read-only beta source; isolated fictional October 2026 dataset",
+    "photos": [],
+    "entry": "revamp/_includes/reference-slice.njk",
+    "axes": "charcoal/Instrument Serif/orange",
+    "sections": [
+      "Hero",
+      "First feature switcher"
+    ],
+    "waived": [
+      "6b",
+      "29",
+      "25"
+    ],
+    "prompt": "Refine approved slice: restore serif, refresh sample screenshots and add zoomable overlay",
+    "review": "In-thread desktop and phone; render 0 FAIL, 0 WARN, 3 WAIVED; page build and original blog preservation checks pass"
+  },
+  {
+    "date": "2026-11-03",
+    "shape": "Product folio",
+    "theme": "brand",
+    "genre": "editorial",
+    "hero": "Ledge",
+    "nav": "masthead",
+    "footer": "colophon",
+    "signature": "Real app at reading scale",
+    "imagery": "Existing supplied product captures; no new private session accessed",
+    "photos": [],
+    "entry": "revamp/index.njk",
+    "axes": "charcoal/Instrument Serif/orange",
+    "sections": [
+      "Opening",
+      "Screen explorer",
+      "Tool index",
+      "Ownership",
+      "Upcoming",
+      "Articles",
+      "Maker",
+      "Support"
+    ],
+    "waived": [
+      22,
+      25
+    ],
+    "prompt": "Rebuild Kaasi retaining brand and blogs",
+    "review": "in-thread; hero mobile wrap corrected, disclosure text visibility corrected"
+  }
+]

@@ -9,6 +9,8 @@ module.exports = function(eleventyConfig) {
   
   // Prevent internal/non-public files from being processed by Eleventy
   eleventyConfig.ignores.add("audit/**");
+  eleventyConfig.ignores.add("revamp/**");
+  eleventyConfig.ignores.add(".hallmark/**");
   eleventyConfig.ignores.add(".agents/**");
   eleventyConfig.ignores.add("404.html");
 

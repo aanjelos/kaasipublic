@@ -1,0 +1,5 @@
+{% macro screen(src, alt, width, height, title, mobileSrc='', extraClass='') %}
+<div class="screen-preview {{ extraClass }}">
+  <picture>{% if mobileSrc %}<source media="(max-width:600px)" srcset="{{ mobileSrc }}" width="716" height="1204">{% endif %}<img src="{{ src }}" alt="{{ alt }}" width="{{ width }}" height="{{ height }}" loading="lazy"></picture>
+</div>
+{% endmacro %}

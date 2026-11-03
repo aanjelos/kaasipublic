@@ -1,6 +1,7 @@
 node_modules/
 _site/
+_revamp/
+.hallmark/screens/
 .DS_Store
 audit/
-.agents/  
- 
+.agents/

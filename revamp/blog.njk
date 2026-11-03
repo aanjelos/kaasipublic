@@ -1,0 +1,6 @@
+---
+layout: base.njk
+title: The Blog Wallet — Kaasi
+permalink: /blog/
+---
+<section class="journal container"><div class="journal-head"><h1>The Blog<br>Wallet.</h1><p>Money, life in Sri Lanka, and building Kaasi.</p></div><label class="search">Find an article<input type="search" id="article-search" placeholder="Search stories and updates"></label><p id="article-count" role="status">{{ posts.length }} articles</p><div class="article-grid">{% for post in posts %}<article data-article data-search="{{ post.title | lower }} {{ post.excerpt | lower }}"><a href="{{ post.url }}"><img src="{{ post.image }}" alt="" width="720" height="450" loading="lazy"><div class="article-meta"><time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time><span>{{ post.minutes }} min read</span></div><h2>{{ post.title }}</h2></a></article>{% endfor %}</div><p id="no-results" hidden>No matching articles. Try another search.</p></section>
