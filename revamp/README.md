@@ -1,6 +1,6 @@
 # Kaasi revamp preview
 
-Branch: `codex/public-site-revamp-v2`. The production Eleventy build and deployment still use the original files. The root config excludes this folder and Hallmark records.
+Branch: `codex/public-site-hybrid-v3`. The earlier preview is preserved on `codex/public-site-revamp-v2`. The production Eleventy build and deployment still use the original files. The root config excludes this folder and Hallmark records.
 
 From the repository root:
 
@@ -32,4 +32,3 @@ No changes were made to `kaasibeta` or `kaasiapp`. No production database, API o
 Run `node revamp/tools/serve-beta-preview.cjs`, then open `http://127.0.0.1:4330/`. This separate local origin reads beta source in read-only mode, replaces fresh-install defaults with fictional data, and uses its own preview database. Cloud SDK, analytics and service-worker registration are disabled. The sample date is October 31, 2026; animation time continues normally. Close this capture server when finished.
 
 The fixture has 29 days of expenses across 13 categories. Its three budgets show red, orange and green progress. For the monthly capture, open All Transactions and expand October 31. Save captures to `.hallmark/beta-captures/`; the website assets belong in `revamp/assets/screens/`. Capture the balance overview separately on desktop and phone, and keep the complete budget panel rather than cropping into its text. Screenshots are static, with only an Illustrative data caption. The feature controls switch between views; there is no image zoom or lightbox.
-
