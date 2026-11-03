@@ -57,6 +57,8 @@ http.createServer((req,res)=>{
  if(!(/^\/(index\.html|style\.css|settings-workspace\.css|onboarding\.css|tailwind\.css|manifest\.json)$/.test(name)||/^\/(js|img|fonts|licenses)\/[a-zA-Z0-9_./-]+$/.test(name))||name.split('/').includes('..')){res.writeHead(404).end();return;}
  try{let body=fs.readFileSync(path.join(root,name));
   if(name==='/index.html')body=body.toString().replace(/<script\b[^>]*src="[^"]*(?:supabase-js|googletagmanager)[^"]*"[^>]*>\s*<\/script>/g,'').replace(/<script>\s*window\.dataLayer[\s\S]*?<\/script>/,'').replace('<script src="js/globals.js',bootstrap+'<script src="js/globals.js');
+  // A visual signed-in fixture only: no credentials or remote client exists.
+  if(name==='/index.html')body=body.replace('id="cloudBackupLoggedOut"','id="cloudBackupLoggedOut" class="hidden"').replace('id="cloudBackupLoggedIn" class="hidden space-y-4"','id="cloudBackupLoggedIn" class="space-y-4"').replace(/(<strong id="userEmail"[\s\S]*?>)\s*\.\.\./,'$1hello@example.com').replace('Last backed up: Checking…','Last backed up: 31 October 2026, 2:30 pm');
   // Substitute only the preview's fresh-install defaults; the source file stays untouched.
   if(name==='/js/globals.js')body=body.toString()+`\ngetDefaultState=()=>JSON.parse(${JSON.stringify(JSON.stringify(fixture))});\n`;
   // Keep the preview dataset separate, including from earlier capture fixtures.
