@@ -6,6 +6,7 @@ author: "Aanjelo Salgado"
 image: "/blog/img/sri-lanka-digital-tax-guide.jpg"
 excerpt: "Sri Lanka is preparing to implement an 18% VAT on digital services like Netflix, Spotify, and more. Learn which services will be affected and how to prepare your budget."
 tags: post
+blogTopic: money
 ---
 
 <p>

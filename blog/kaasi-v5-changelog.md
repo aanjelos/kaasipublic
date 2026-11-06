@@ -6,6 +6,7 @@ author: "Aanjelo Salgado"
 image: "/blog/img/kaasi-v5-changelog.jpg"
 excerpt: "Kaasi V5 introduces optional Cloud Backups! Sync data across devices, customize dashboard shortcuts, and enjoy improved data management."
 tags: post
+blogTopic: updates
 ---
 
 <p>

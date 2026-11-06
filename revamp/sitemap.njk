@@ -1,4 +1,4 @@
 ---
 permalink: /sitemap.xml
 ---
-<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://www.kaasi.com.lk/</loc></url><url><loc>https://www.kaasi.com.lk/blog/</loc></url><url><loc>https://www.kaasi.com.lk/privacy/</loc></url>{% for post in posts %}<url><loc>https://www.kaasi.com.lk{{ post.url }}</loc></url>{% endfor %}</urlset>
+<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://www.kaasi.com.lk/</loc></url><url><loc>https://www.kaasi.com.lk/blog/</loc></url><url><loc>https://www.kaasi.com.lk/privacy/</loc></url>{% for post in posts %}<url><loc>https://www.kaasi.com.lk{{ post.url }}</loc></url>{% endfor %}<url><loc>https://www.kaasi.com.lk/terms/</loc></url>{% for item in blogPages %}{% if item.url != "/blog/" %}<url><loc>https://www.kaasi.com.lk{{ item.url }}</loc></url>{% endif %}{% endfor %}</urlset>

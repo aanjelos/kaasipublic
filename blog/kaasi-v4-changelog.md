@@ -6,6 +6,7 @@ author: "Aanjelo Salgado"
 image: "/blog/img/kaasi-v4-changelog.jpg"
 excerpt: "Introducing Kaasi V4! Export detailed monthly PDF reports, hide unused accounts, enjoy a supercharged search, and a more polished interface."
 tags: post
+blogTopic: updates
 ---
 
 <p>

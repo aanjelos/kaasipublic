@@ -6,6 +6,7 @@ author: "Aanjelo Salgado"
 image: "/blog/img/why-kaasi-is-free.jpg"
 excerpt: "No ads, no paywalls, and no hidden data harvesting. Discover the philosophy behind Kaasi, how it was built using AI, and how I keep operating costs at zero."
 tags: post
+blogTopic: behind-kaasi
 ---
 
 If you look at the landscape of modern apps, especially personal finance and expense trackers, almost everything comes with a catch. You are either hit with a paywall after logging a few transactions, forced to watch intrusive ads, or signing away your private data to third-party advertisers. 

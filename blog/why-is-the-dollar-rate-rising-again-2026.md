@@ -6,6 +6,7 @@ author: "Aanjelo Salgado - With Gemini AI"
 image: "/blog/img/lkr-usd-2026.jpg"
 excerpt: "A factual look at why the Sri Lankan Rupee is depreciating against the US Dollar in mid-2026 and how tracking your expenses can help you navigate the rising cost of living."
 tags: post
+blogTopic: money
 ---
 
 If you've been keeping an eye on the exchange rates or scrolling through local social media, you’ve likely noticed a familiar trend: the US Dollar (USD) is creeping up against the Sri Lankan Rupee (LKR). Recent market closures saw the Rupee trading at Rs. 335.50 to Rs. 336.25 against the Dollar. 

@@ -6,6 +6,7 @@ author: "Aanjelo Salgado"
 image: "/blog/img/the-story-of-kaasi.jpg"
 excerpt: "Discover the origin story of Kaasi, a personal finance app built for Sri Lankans out of a personal need for something better."
 tags: post
+blogTopic: behind-kaasi
 ---
 
 <p>

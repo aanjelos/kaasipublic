@@ -6,6 +6,7 @@ author: "Aanjelo Salgado - With Gemini & Perplexity AI"
 image: "/blog/img/history-of-payment-cards.jpg"
 excerpt: "Explore the fascinating history of payment cards, from early charge plates to the Diners Club card and the modern EMV chip."
 tags: post
+blogTopic: money
 ---
 
 <p>

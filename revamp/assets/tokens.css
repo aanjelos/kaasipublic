@@ -13,6 +13,6 @@
   --color-rule: #3a3a3a;
   --color-accent: #e67e26; --color-accent-ink: #121212; --color-focus: #e67e26;
   --font-display: "Instrument Serif", ui-serif, serif; --font-body: "Satoshi", ui-sans-serif, system-ui, sans-serif; --font-outlier: var(--font-body);
-  --radius-card: 4px; --radius-pill: 999px; --rule-hair: 1px; --shadow-card: none;
+  --radius-card: 4px; --radius-pill: 8px; --rule-hair: 1px; --shadow-card: none;
   --tracking-display: -0.02em;
 }

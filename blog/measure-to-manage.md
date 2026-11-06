@@ -6,6 +6,7 @@ author: "Aanjelo Salgado - With Gemini AI"
 image: "/blog/img/measure-to-manage.jpg"
 excerpt: "The crisis might be over, but the high prices remain. Learn why tracking your expenses is the key to mastering the 'new normal' cost of living in Sri Lanka."
 tags: post
+blogTopic: money
 ---
 
 <p class="text-xl text-white font-medium">

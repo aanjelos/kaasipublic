@@ -6,6 +6,7 @@ author: "Aanjelo Salgado"
 image: "/blog/img/kaasi-v3-changelog.jpg"
 excerpt: "Announcing the Kaasi v3 update! Discover our new home at kaasi.com.lk, a brand new website, and exciting new app features."
 tags: post
+blogTopic: updates
 ---
 
 <p>

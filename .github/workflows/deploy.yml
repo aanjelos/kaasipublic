@@ -32,7 +32,7 @@ jobs:
         run: npm ci || npm install
 
       - name: Build site
-        run: npx @11ty/eleventy
+        run: npx @11ty/eleventy --config=revamp/eleventy.config.cjs
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -40,7 +40,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: _revamp
 
   deploy:
     environment:

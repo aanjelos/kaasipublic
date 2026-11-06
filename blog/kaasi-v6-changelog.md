@@ -1,14 +1,15 @@
 ---
 layout: post.njk
-title: "Kaasi V6: The Personal Finance Power Tool Upgrade"
+title: "Kaasi v6: The Personal Finance Power Tool Upgrade"
 date: 2026-07-20
 author: "Aanjelo Salgado"
 image: "/blog/img/kaasi-v6-changelog.jpg"
-excerpt: "Welcome to Kaasi V6! Our biggest update yet brings app PIN locks, category budgets, a built-in math calculator, native offline support, and a complete UI overhaul."
+excerpt: "Welcome to Kaasi v6! Our biggest update yet brings app PIN locks, category budgets, a built-in math calculator, native offline support, and a complete UI overhaul."
 tags: post
+blogTopic: updates
 ---
 
-It has been over a year since Kaasi moved to the `kaasi.com.lk` domain, shifting from a private spreadsheet alternative into a shared public utility. Today, I am proud to announce **Kaasi V6**, a massive release that pushes Kaasi closer to its ultimate goal: being the ultimate personal finance power tool for serious Sri Lankans.
+It has been over a year since Kaasi moved to the `kaasi.com.lk` domain, shifting from a private spreadsheet alternative into a shared public utility. Today, I am proud to announce **Kaasi v6**, a massive release that pushes Kaasi closer to its ultimate goal: being the ultimate personal finance power tool for serious Sri Lankans.
 
 This update represents a complete upgrade of the system's core capabilities. Rather than acting as a simple tracker, Kaasi v6 transforms into a power tool for your money. Below is the complete list of new features, bug fixes, and improvements included in this release.
 
@@ -121,6 +122,6 @@ Kaasi can now be installed directly to your phone or computer just like a native
 
 <br>
 
-Kaasi V6 is rolling out today. Launch the app, save it to your home screen, and master your financial flow.
+Kaasi v6 is rolling out today. Launch the app, save it to your home screen, and master your financial flow.
 
 As always, Kaasi is completely free and private. Voluntary donations to support the development process and AI subscriptions are always welcome, and details can be found on our home page.

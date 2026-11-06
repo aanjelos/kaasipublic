@@ -1,6 +1,18 @@
 ---
 layout: base.njk
-title: The Blog Wallet — Kaasi
-permalink: /blog/
+title: The Blog Wallet | Kaasi
+pagination:
+  data: blogPages
+  size: 1
+  alias: blogPage
+permalink: "{{ blogPage.url }}"
 ---
-<section class="journal container"><div class="journal-head"><h1>The Blog<br>Wallet.</h1><p>Money, life in Sri Lanka, and building Kaasi.</p></div><label class="search">Find an article<input type="search" id="article-search" placeholder="Search stories and updates"></label><p id="article-count" role="status">{{ posts.length }} articles</p><div class="article-grid">{% for post in posts %}<article data-article data-search="{{ post.title | lower }} {{ post.excerpt | lower }}"><a href="{{ post.url }}"><img src="{{ post.image }}" alt="" width="720" height="450" loading="lazy"><div class="article-meta"><time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time><span>{{ post.minutes }} min read</span></div><h2>{{ post.title }}</h2></a></article>{% endfor %}</div><p id="no-results" hidden>No matching articles. Try another search.</p></section>
+<section class="journal container"><div class="journal-head"><h1>The Blog Wallet.</h1></div>
+<nav class="blog-filters" aria-label="Filter articles by topic">{% for filter in blogPage.filters %}<a href="{{ filter.url }}"{% if filter.slug == blogPage.topic %} aria-current="page"{% endif %}>{{ filter.label }}</a>{% endfor %}</nav>
+<div class="article-grid">{% for post in blogPage.items %}<article><a href="{{ post.url }}"><img src="{{ post.image }}" alt="" width="720" height="450" loading="lazy"><div class="article-meta"><time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time><span>{{ post.minutes }} min read</span></div><h2>{{ post.title }}</h2></a><a class="post-topic" href="/blog/tag/{{ post.topic.slug }}/">{{ post.topic.label }}</a></article>{% endfor %}</div>
+{% if blogPage.total > 1 %}<nav class="blog-pagination" aria-label="Article pages">
+<span class="pagination-direction">{% if blogPage.number > 1 %}{% for item in blogPage.pages %}{% if item.number == blogPage.number - 1 %}<a href="{{ item.url }}" rel="prev"><span aria-hidden="true">←</span> Previous</a>{% endif %}{% endfor %}{% else %}<span aria-disabled="true"><span aria-hidden="true">←</span> Previous</span>{% endif %}</span>
+<span class="pagination-numbers">{% for item in blogPage.pages %}<a href="{{ item.url }}"{% if item.number == blogPage.number %} aria-current="page"{% endif %} aria-label="Page {{ item.number }}">{{ item.number }}</a>{% endfor %}</span>
+<span class="pagination-direction">{% if blogPage.number < blogPage.total %}{% for item in blogPage.pages %}{% if item.number == blogPage.number + 1 %}<a href="{{ item.url }}" rel="next">Next <span aria-hidden="true">→</span></a>{% endif %}{% endfor %}{% else %}<span aria-disabled="true">Next <span aria-hidden="true">→</span></span>{% endif %}</span>
+</nav>{% endif %}
+</section>
