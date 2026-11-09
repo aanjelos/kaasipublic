@@ -100,3 +100,64 @@ body:not(:has(.reference-slice)) .menu-toggle{display:none}
 .prose .article-visual-side{width:min(40%,260px)}
 .prose .article-visual-upcoming{width:min(45%,300px)}
 @media(max-width:700px){.prose .article-visual-side{width:min(100%,260px)}.prose .article-visual-upcoming{width:min(100%,300px)}}
+
+/* Lost change: a playful 404 that still gets visitors home. */
+.lost-page{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:48px;min-height:620px;padding-block:100px 130px}
+.lost-page-copy{position:relative;z-index:1}
+.lost-eyebrow{font-size:12px;letter-spacing:.12em;font-weight:700;color:var(--color-accent);margin:0 0 24px}
+.lost-eyebrow span{color:var(--color-muted);margin-inline:8px}
+.lost-page h1{font:400 clamp(58px,6vw,92px)/.98 var(--font-display);letter-spacing:-.025em;max-width:none}
+.lost-description{font-size:18px;max-width:37ch;margin:28px 0 32px;color:var(--color-muted)}
+.lost-actions{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.lost-actions .primary{gap:16px;min-height:52px;color:#fff}.lost-actions .primary:hover{color:#fff}
+.lost-blog{display:inline-flex;align-items:center;gap:10px;min-height:44px;text-decoration:none;border-bottom:1px solid var(--color-line)}
+.lost-blog:hover{color:var(--color-accent);border-color:var(--color-accent)}
+.lost-illustration{min-height:420px;display:grid;place-items:center;position:relative;isolation:isolate}
+.lost-illustration:before{content:'';position:absolute;inset:7%;z-index:-1;background:radial-gradient(circle,rgba(230,126,38,.16),transparent 65%)}
+.lost-orbit{position:absolute;border:1px solid rgba(230,126,38,.14);border-radius:50%;width:320px;height:320px;pointer-events:none}
+.lost-orbit-two{width:410px;height:410px;border-color:rgba(255,255,255,.045)}
+.lost-coin{width:170px;height:170px;border-radius:50%;border:1px solid rgba(230,126,38,.42);background:linear-gradient(145deg,#30231a,#191715 65%);box-shadow:0 22px 55px rgba(0,0,0,.4),inset 0 0 0 8px rgba(230,126,38,.06);display:grid;place-items:center;cursor:pointer;transition:transform 220ms var(--ease-out)}
+.lost-coin img{width:88px;height:88px}.lost-coin-caption{position:absolute;bottom:13px;color:var(--color-muted);font-size:13px}
+@media(hover:hover) and (pointer:fine){.lost-coin:hover{transform:rotate(-8deg) scale(1.04)}}
+.lost-coin.is-spinning{animation:lost-coin-spin 600ms var(--ease-out)}
+@keyframes lost-coin-spin{0%{transform:rotateY(0)}100%{transform:rotateY(360deg)}}
+@media(max-width:700px){.lost-page{grid-template-columns:1fr;gap:12px;min-height:0;padding-block:64px 72px}.lost-description{font-size:16px}.lost-illustration{min-height:300px;grid-row:1}.lost-orbit{width:220px;height:220px}.lost-orbit-two{width:285px;height:285px}.lost-coin{width:128px;height:128px}.lost-coin img{width:66px;height:66px}.lost-coin-caption{bottom:0}.lost-actions{gap:16px}}
+@media(prefers-reduced-motion:reduce){.lost-coin,.lost-coin.is-spinning{animation:none;transition:none}}
+
+/* Keep the 404 footer at the bottom without adding empty space below the content. */
+body:has(.lost-page){min-height:100vh;display:flex;flex-direction:column}
+body:has(.lost-page)>main{flex:1;display:flex;align-items:center}
+body:has(.lost-page)>.site-footer{flex-shrink:0}
+.lost-page{min-height:0;padding-block:64px 72px}
+.lost-actions .primary,.lost-actions .primary:hover{color:var(--color-paper)}
+@media(max-width:700px){.lost-page{gap:24px;padding-block:32px 48px}.lost-illustration{min-height:250px}.lost-orbit{width:190px;height:190px}.lost-orbit-two{width:240px;height:240px}.lost-coin-caption{bottom:0}.lost-page-copy{text-align:center}.lost-description{margin:20px auto 24px}.lost-actions{justify-content:center}}
+
+body:has(.lost-page)>.site-footer{margin-top:0}
+
+
+/* A two-sided coin holds its position after each flip. */
+.lost-description{max-width:none}
+.lost-coin{background:var(--color-accent);border-color:#f4a04e;color:#121212;font:700 53px/1 var(--font-body);letter-spacing:-.06em;transform:perspective(800px) rotate(-8deg) rotateY(-15deg);transition:transform 600ms var(--ease-out);box-shadow:0 22px 55px rgba(0,0,0,.4),inset 0 0 0 8px rgba(0,0,0,.08)}
+.lost-coin.is-flipped{transform:perspective(800px) rotate(-8deg) rotateY(165deg)}
+@media(hover:hover) and (pointer:fine){.lost-coin:hover{transform:perspective(800px) rotate(-8deg) rotateY(-15deg) scale(1.04)}.lost-coin.is-flipped:hover{transform:perspective(800px) rotate(-8deg) rotateY(165deg) scale(1.04)}}
+@media(max-width:700px){.lost-coin{font-size:40px}.lost-description{max-width:100%}}
+@media(prefers-reduced-motion:reduce){.lost-coin{transition:none}}
+
+.lost-description{text-wrap:pretty}
+
+
+.lost-description span{white-space:nowrap}
+@media(max-width:300px){.lost-description span{white-space:normal}}
+
+
+@media(min-width:701px){.lost-description span{display:block}}
+
+
+@media(prefers-reduced-motion:no-preference){
+ .lost-orbit-one{animation:lost-orbit-breathe 5s ease-in-out infinite}
+ .lost-orbit-two{animation:lost-orbit-breathe 5s ease-in-out -2.5s infinite}
+ @keyframes lost-orbit-breathe{0%,100%{opacity:.38;transform:scale(.98)}50%{opacity:.85;transform:scale(1.015)}}
+}
+
+/* A square glow fades fully before its own edges at every viewport. */
+.lost-illustration:before{inset:auto;left:50%;top:50%;width:min(100%,440px);aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(circle closest-side,rgba(230,126,38,.16) 0%,rgba(230,126,38,.07) 38%,transparent 100%);pointer-events:none}

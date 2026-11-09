@@ -1,6 +1,17 @@
 ---
 layout: base.njk
 title: Page not found | Kaasi
+seoDescription: This page couldn't be found. Head back to Kaasi.
 permalink: /404.html
 ---
-<section class="journal container"><h1>Page not found.</h1><p>That address doesn’t lead to a page.</p><a class="primary" href="/">Back to Kaasi</a></section>
+<section class="lost-page container" aria-labelledby="lost-title">
+  <div class="lost-page-copy">
+    <h1 id="lost-title">Looks like<br>you're lost.</h1>
+    <p class="lost-description">This page seems to have slipped out of the&nbsp;wallet. <span>Let's get you back on track.</span></p>
+    <div class="lost-actions"><a class="primary" href="/">Back to Kaasi <span aria-hidden="true">↗</span></a></div>
+  </div>
+  <div class="lost-illustration">
+    <span class="lost-orbit lost-orbit-one" aria-hidden="true"></span><span class="lost-orbit lost-orbit-two" aria-hidden="true"></span>
+    <button class="lost-coin" type="button" aria-label="Flip the 404 coin" aria-pressed="false"><span aria-hidden="true">404</span></button>
+  </div>
+</section>

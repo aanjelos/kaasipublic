@@ -225,3 +225,7 @@ addEventListener('blur',()=>{for(const id of pressed.keys())releasePress(id);});
 calm.addEventListener('change',()=>{for(const id of pressed.keys())releasePress(id);});
 
 document.addEventListener('keydown',()=>{for(const id of pressed.keys())releasePress(id);document.querySelectorAll(pressSelector).forEach(cancelMotion);const menu=document.querySelector('#main-navigation');if(menu)cancelMotion(menu);});
+
+// The coin keeps its position between flips, including keyboard activation.
+const lostCoin=document.querySelector('.lost-coin');
+if(lostCoin){lostCoin.addEventListener('click',()=>{const flipped=lostCoin.classList.toggle('is-flipped');lostCoin.setAttribute('aria-pressed',String(flipped));});}
