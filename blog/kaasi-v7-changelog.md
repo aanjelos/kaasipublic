@@ -7,6 +7,7 @@ image: "/blog/img/v7.jpg"
 excerpt: "Kaasi v7 brings automatic cloud sync, subscription tracking, history suggestions, a redesigned Settings experience and a stronger foundation for your data."
 tags: post
 blogTopic: updates
+draft: true
 ---
 
 Kaasi v6 brought budgets, credit card tools and a whole lot more to the dashboard. With **Kaasi v7**, I wanted to make those tools easier to use every day: spend less time repeating entries, keep track of upcoming subscription payments, and access your records across devices.

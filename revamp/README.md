@@ -14,6 +14,8 @@ Build only: omit `--serve --port=4322`. Output is `_revamp/`. No new production 
 
 Original `blog/*.md` files are read directly; no migration or duplication. Keep adding Markdown files there with the existing frontmatter (`title`, `date`, `author`, `image`, `excerpt`, `tags: post`, `layout: post.njk`). Both old and replacement sites can build the same article. The slug comes from the filename. The preview automatically adds reading time, heading anchors, section navigation, related reading, topic filtering, six-post pagination and metadata.
 
+Set `draft: true` in an article's frontmatter to exclude its page, listing entries and sitemap entry. To publish it, remove that line (or change it to `draft: false`) and deploy. Draft image files are still publicly accessible if their direct URLs are known. Local output from an earlier build can remain in `_revamp/`; remove the old generated article page when checking a newly hidden draft locally. GitHub builds into a fresh output directory.
+
 Use Markdown for sections, lists and quotes. Inline HTML images and figures are supported, as are tables. Put images in `blog/img/` and use `/blog/img/name.jpg`. A captioned figure can contain `<img ... alt="Description" loading="lazy">` and `<figcaption>Caption</figcaption>`. For a note use `<aside class="callout">...</aside>`. This content is trusted repository source, never user-submitted markup.
 
 ## Before launch
